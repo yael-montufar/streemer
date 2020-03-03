@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_201006) do
+ActiveRecord::Schema.define(version: 2020_03_03_201911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 2020_03_03_201006) do
     t.index ["user_id"], name: "index_performer_profiles_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "performer_profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["performer_profile_id"], name: "index_reviews_on_performer_profile_id"
+  end
+
   create_table "tips", force: :cascade do |t|
     t.bigint "event_id"
     t.bigint "user_id"
@@ -61,6 +68,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_201006) do
 
   add_foreign_key "events", "performer_profiles"
   add_foreign_key "performer_profiles", "users"
+  add_foreign_key "reviews", "performer_profiles"
   add_foreign_key "tips", "events"
   add_foreign_key "tips", "users"
 end
