@@ -1,4 +1,3 @@
-<h2>Leave a review</h2>
 <%= simple_form_for [@performer, @review], url: performer_reviews_path(@performer) do |form|%>
 <%= form.input :content, as: :text %>
 <%= form.button :submit %>

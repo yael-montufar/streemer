@@ -1,8 +1,11 @@
-<h1><%= @performer.email %></h1>
-
-
-<h2>Leave a review</h2>
-<%= simple_form_for [@performer, @review], url: performer_reviews_path(@performer) do |form|%>
-<%= form.input :content, as: :text %>
-<%= form.button :submit %>
+<h1><%= @user.email %></h1>
+<h2>What people are saying about this artist</h2>
+<% if @performer.reviews.blank? %>
+  <p>Be the first to write a review!</p>
+<% else %>
+<% @reviews.each do |review| %>
+    <p><%= review.content %></p>
+  <% end %>
 <% end %>
+<h3>Write a review!</h3>
+<%= render 'reviews/form'%>

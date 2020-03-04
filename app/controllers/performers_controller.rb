@@ -3,6 +3,9 @@ class PerformersController < ApplicationController
 
   def show
     @review = Review.new
-    @performer = User.find(params[:id])
+    @user = User.find(params[:id])
+    @performer = PerformerProfile.find(params[:id])
+    @reviews = @performer.reviews.last(5)
+    # @reviews = @performer.reviews.first(5) Not working!!!
   end
 end
