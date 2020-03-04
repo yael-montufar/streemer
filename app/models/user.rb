@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_one :performer_profile, dependent: :destroy
   has_many :tips, dependent: :destroy
+  has_many :reviews, through: :performer_profile
 end

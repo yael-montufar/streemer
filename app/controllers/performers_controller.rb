@@ -3,5 +3,6 @@ class PerformersController < ApplicationController
 
   def show
     @performer = User.find(params[:id])
+    @review = Review.new
   end
 end
