@@ -4,7 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :performer_profile, dependent: :destroy
   has_many :tips, dependent: :destroy
+  has_one :performer_profile, dependent: :destroy
   has_many :reviews, through: :performer_profile
+
+  scope :performer, -> { joins(:performer_profile) }
+
+  def performer?
+    performer_profile.present?
+  end
 end
