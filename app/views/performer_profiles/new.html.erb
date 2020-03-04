@@ -1,0 +1,7 @@
+<h1>new performer</h1>
+<%= current_user.email %>
+<%= simple_form_for @performer_profile  do |f| %>
+  <%= f.input :stage_name %>
+  <%= f.input :bio %>
+  <%= f.submit "create", class: "btn btn-primary" %>
+<% end %>
