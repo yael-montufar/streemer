@@ -1,0 +1,18 @@
+<div class="container-fluid event-show">
+  <h2 class="ml-5 pt-1 mt-3 mb-3"><%= @event.name %></h2>
+  <video autoplay muted loop id="musicVideo-half">
+    <source src="https://res.cloudinary.com/dri7xzd5a/video/upload/v1583341014/1027910684-preview_vqs6dg.mp4" type="video/mp4">
+  </video>
+
+
+  <div class="tip-performer-card justify-content-centre">
+    <div class="col-lg-6">
+      <h5 class="mt-4">Give a tip</h5>
+      <h3 class="tip-text">Support your favourite local artist</h3>
+      <%= submit_tag "$2.00", class: "btn btn-success text-white" %>
+      <%= submit_tag "$5.00", class: "btn btn-success text-white" %>
+      <%= submit_tag "$10.00", class: "btn btn-success text-white" %>
+      <%= submit_tag "Other", class: "btn btn-success text-white" %>
+    </div>
+  </div>
+</div>

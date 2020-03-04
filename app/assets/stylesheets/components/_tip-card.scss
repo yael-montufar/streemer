@@ -1,0 +1,32 @@
+.tip-card {
+  overflow: hidden;
+  height: 120px;
+  width: 1000px;
+  background: white;
+  box-shadow: 0 0 16px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.tip-card .tip-card-info {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  max-height: 100px;
+}
+
+
+.tip-performer h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.tip-performer p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
