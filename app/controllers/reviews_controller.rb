@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @performer = User.find(params[:performer_id])
     @review = Review.new(review_params)
     @review.performer_profile = PerformerProfile.find_by(user_id: @performer)
+
     if @review.save
       redirect_to performer_path(@performer)
     else
