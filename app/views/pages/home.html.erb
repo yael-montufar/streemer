@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="wrapper">
+  <div class="gradient">
+    <div class="home-banner">
+    <video autoplay muted loop id="musicVideo">
+      <source src="https://res.cloudinary.com/dri7xzd5a/video/upload/v1583267895/1044061171-preview_y058cn.mp4" type="video/mp4">
+    </video>
+
+
+
+    <div class= "video-text">
+    <h2 class="justify-content-left text-white mb-3">Livestream and Discover Street Artists</h2>
+<!-- <div class="col-lg pt-3 mt-4" > -->
+
+<!--         <div class="form-inline my-2 my-lg-0 d-flex justify-content-left"> -->
+  <%#= form_tag projects_path, method: :get do %>
+  <%#= text_field_tag :query,
+      # params[:query],
+      # class: "form-control",
+      # placeholder: "Search"
+                                  %>
+  <%= submit_tag "Find Local Artists", class: "btn btn-success text-white" %>
+  <%# end %>
+<!--   </div> -->
+    </div>
+    </div>
+  </div>
+</div>
