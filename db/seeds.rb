@@ -51,43 +51,43 @@ event_1 = Event.create!(
   performer_profile: performer_1,
   name: "Hello Neighbour",
   description: "Jazz Music",
-  location:  "Salón Los Ángeles, Calle de Lerdo 206, Guerrero, Mexico City, CDMX, Mexico"
+  location:  "Lerdo 206, Guerrero, Mexico City, CDMX, Mexico"
 )
 event_2 = Event.create!(
   performer_profile: performer_2,
   name: "Velocity",
   description: "Juggler",
-  location: "Jules Basement, Calle Julio Verne 93, Polanco, Polanco IV Secc, Mexico City, CDMX, Mexico"
+  location: "Campeche 200, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX"
 )
 event_3 = Event.create!(
   performer_profile: performer_3,
   name: "Indigoing",
   description: "Breakdance",
-  location: "Mambocafé, Av Insurgentes Sur 644, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico"
+  location: "Av Insurgentes Sur 644, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico"
 )
 event_4 = Event.create!(
   performer_profile: performer_4,
   name: "Botanical",
   description: "Cover Band",
-  location: "Jules Basement, Calle Julio Verne 93, Polanco, Polanco IV Secc, Mexico City, CDMX, Mexico"
+  location: "Fernando Montes de Oca 28 - Ciudad de México, CDMX"
 )
 event_5 = Event.create!(
   performer_profile: performer_5,
   name: "MonkeyBusiness",
   description: "Cover Band",
-  location: "20 Calle de Motolinia , Centro, Cuauhtémoc, Mexico City, CDMX, Mexico"
+  location: "Av Insurgentes Sur 710, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico"
 )
 event_6 = Event.create!(
   performer_profile: performer_6,
   name: "Soulvibezzz",
   description: "Jazz",
-  location: "Zinco Jazz Club, Calle de Motolinia 20, Centro Histórico, Centro, Mexico City, CDMX, Mexico"
+  location: "Campeche 233, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX"
 )
 event_7 = Event.create!(
   performer_profile: performer_7,
   name: "Unhinged",
   description: "Rock",
-  location: "Bulldog Café, Rubens 6, Benito Juárez, San Juan, Mexico City, CDMX, Mexico"
+  location: "Rubens 6, Benito Juárez, San Juan, Mexico City, CDMX, Mexico"
 )
 event_8 = Event.create!(
   performer_profile: performer_8,

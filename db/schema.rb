@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_215737) do
 
   create_table "tips", force: :cascade do |t|
     t.bigint "event_id"
-    t.bigint "user_id"
+    t.bigint "user_id" # 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_tips_on_event_id"
