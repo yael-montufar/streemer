@@ -1,1 +1,11 @@
-<%= @performer.email %>
+<h1><%= @performer.email %></h1>
+<h2>What people are saying about this artist</h2>
+<% if @performer.reviews.blank? %>
+  <p>Be the first to write a review!</p>
+<% else %>
+<% @performer.reviews.last(5).each do |review| %>
+    <p><%= review.content %></p>
+  <% end %>
+<% end %>
+<h3>Write a review!</h3>
+<%= render 'reviews/form', performer: @performer, review: @review %>
