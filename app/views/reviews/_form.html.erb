@@ -1,4 +1,4 @@
-<%= simple_form_for [@performer, @review], url: performer_reviews_path(@performer) do |form|%>
-<%= form.input :content, as: :text %>
+<%= simple_form_for [performer, review], url: performer_reviews_path(performer) do |form|%>
+<%= form.input :content %>
 <%= form.button :submit %>
 <% end %>
