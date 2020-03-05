@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :events, only: [:index, :show] do
+  resources :events, only: [:index, :show, :new, :create] do
     get :stream, on: :member
   end
   resources :performers, only: [:show] do
@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources :performer_profiles, only: [:new, :create]
+
 end
