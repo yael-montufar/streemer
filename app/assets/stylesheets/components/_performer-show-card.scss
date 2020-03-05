@@ -1,0 +1,39 @@
+.headshot {
+  position: absolute;
+  width: calc(35vh);
+  height: calc(35vh);
+  top: 35%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  background: url('https://res.cloudinary.com/dri7xzd5a/image/upload/v1583346474/yael_i2g4li.jpg') center center no-repeat;
+  background-size: cover;
+  border-radius: 0px 20px 0px 20px;
+
+  &:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #bdc3c7;
+  background: -webkit-linear-gradient(left, #2c3e50, #bdc3c7);
+  background: -o-linear-gradient(left, #2c3e50, #bdc3c7);
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+
+  opacity: .5;
+  border-radius: 0px 20px 0px 20px;
+  }
+}
+.performer-name {
+  font-size: 1.5em;
+  margin: 0
+}
+.performer-bio {
+  position:absolute;
+  left: 0%;
+  bottom: 0px;
+  color: white;
+}
+
