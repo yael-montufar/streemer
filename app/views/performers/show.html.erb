@@ -1,5 +1,16 @@
-<p><%= @performer.email %></p>
-<h2>What people are saying about this artist</h2>
+<div class="performer-banner performer-gradient position-relative">
+  <%= render 'performer-show-card', performer: @performer %>
+  <%= render 'performer-follow-button' %>
+  <%= render 'performer-show-button' %>
+</div>
+
+
+
+
+
+
+
+<h2>What people</h2>
 <% if @performer.reviews.blank? %>
   <p>Be the first to write a review!</p>
 <% else %>

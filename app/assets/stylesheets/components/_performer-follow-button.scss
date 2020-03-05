@@ -1,0 +1,21 @@
+.follow-btn {
+  color: black;
+  background-color: #F0F1F1;
+  border: 1px solid #4A4A4A;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: lighter;
+  margin: 0px;
+}
+.follow-btn:hover,
+.follow-btn:hover {
+  color: black;
+  opacity: .9;
+}
+.follow-btn-position {
+  position: absolute;
+  bottom: 33%;
+  left: 35%;
+  z-index: 1;
+
+}
