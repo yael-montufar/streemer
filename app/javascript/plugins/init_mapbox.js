@@ -45,7 +45,8 @@ const addGeolocateControl = (map) => {
       positionOptions: {
         enableHighAccuracy: true
       },
-      trackUserLocation: true
+      trackUserLocation: true,
+      showAccuracyCircle: false
     })
   );
 };
