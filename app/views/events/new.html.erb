@@ -1,0 +1,13 @@
+  <%= simple_form_for @event do |e| %>
+  <div>
+    <h2 >Start a performance!</h2>
+      <%= e.input :name %>
+      <%= e.input :description %>
+      <%= e.input :location %>
+      <%= e.input :starts_at, html5: true %>
+      <%= e.input :ends_at, html5: true %>
+      <%= e.input :photo, as: :file %>
+      <%= e.submit "Create", class: "btn-outline-secondary" %>
+    <% end %>
+  </div>
+</div>
