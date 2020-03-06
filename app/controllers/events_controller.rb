@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 
   def index
       @events = Event.geocoded
+      @icons = ["fa-play-circle", "fa-clock"]
   end
 
   def list
