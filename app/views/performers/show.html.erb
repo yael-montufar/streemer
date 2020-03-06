@@ -1,17 +1,12 @@
-<div class="performer-banner performer-gradient position-relative">
-  <%= render 'performer-show-card', performer: @performer %>
-  <%= render 'performer-follow-button' %>
-  <%= render 'performer-show-button' %>
+<div class="performer-banner performer-gradient position-relative <%= @is_mine && 'performer-profile-gradient' %>">
+  <%= render 'performer-show-card', performer: @performer, is_mine: @is_mine %>
+  <%= render 'performer-follow-button', is_mine: @is_mine  %>
+  <%= render 'performer-show-button', is_mine: @is_mine  %>
 </div>
 
 
-<h3 class="ml-2 mt-4">What people say</h3>
-<% if @performer.reviews.blank? %>
-  <p class="ml-2">Be the first to write a review!</p>
+<% if @is_mine %>
+  <%= render 'performer-show-upcoming' %>
 <% else %>
-<% @performer.reviews.last(5).each do |review| %>
-    <p class="ml-2"><%= review.content %></p>
-  <% end %>
+  <%= render 'performer-show-review' %>
 <% end %>
-<h3 class="ml-2">Write a review!</h3>
-<%= render 'reviews/form', performer: @performer, review: @review %>
