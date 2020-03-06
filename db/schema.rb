@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_215737) do
+ActiveRecord::Schema.define(version: 2020_03_05_235109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_215737) do
     t.bigint "performer_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["performer_profile_id"], name: "index_events_on_performer_profile_id"
   end
 
