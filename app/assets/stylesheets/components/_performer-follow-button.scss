@@ -1,9 +1,10 @@
 .follow-btn {
   color: black;
-  background-color: #F0F1F1;
-  border: 1px solid #4A4A4A;
+  background-color: #008080;
+  height: 60px;
+  width: 240px;
   padding: 12px 24px;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: lighter;
   margin: 0px;
 }
@@ -14,8 +15,8 @@
 }
 .follow-btn-position {
   position: absolute;
-  bottom: 33%;
-  left: 35%;
+  bottom: 25%;
+  left: 20%;
   z-index: 1;
 
 }

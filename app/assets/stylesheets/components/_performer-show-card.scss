@@ -1,14 +1,14 @@
 .headshot {
   position: absolute;
-  width: calc(35vh);
-  height: calc(35vh);
+  width: calc(40vh);
+  height: calc(40vh);
   top: 35%;
   left: 50%;
   z-index: 2;
   transform: translate(-50%, -50%);
   background: url('https://res.cloudinary.com/dri7xzd5a/image/upload/v1583346474/yael_i2g4li.jpg') center center no-repeat;
   background-size: cover;
-  border-radius: 0px 20px 0px 20px;
+  border-radius: 10px 10px 10px 10px;
 
   &:before {
   content: '';
