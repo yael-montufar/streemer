@@ -5,18 +5,13 @@
 </div>
 
 
-
-
-
-
-
-<h2>What people</h2>
+<h3 class="ml-2 mt-4">What people say</h3>
 <% if @performer.reviews.blank? %>
-  <p>Be the first to write a review!</p>
+  <p class="ml-2">Be the first to write a review!</p>
 <% else %>
 <% @performer.reviews.last(5).each do |review| %>
-    <p><%= review.content %></p>
+    <p class="ml-2"><%= review.content %></p>
   <% end %>
 <% end %>
-<h3>Write a review!</h3>
+<h3 class="ml-2">Write a review!</h3>
 <%= render 'reviews/form', performer: @performer, review: @review %>
