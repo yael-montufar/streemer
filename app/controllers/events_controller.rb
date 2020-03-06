@@ -12,10 +12,13 @@ class EventsController < ApplicationController
       @latitude = params[:lat].to_f
       @events = Event.near([@latitude, @longitude], 5)
     end
-    @markers = @events.map do |flat|
+    
+    @markers = @events.map do |event|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        icon: ["stream", "soon"].sample,
+        lat: event.latitude,
+        lng: event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
       }
     end
   end
@@ -29,6 +32,15 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def new
+    @event = Event.new
+
+  end
+
+  def create
+    @event = Event.new(event_params)
+
+  end
 end
 
 

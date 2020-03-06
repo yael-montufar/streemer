@@ -1,0 +1,16 @@
+.marker {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-size: cover;
+
+  &.marker-stream {
+    background-image: asset-url("marker-stream.png");
+  }
+
+  &.marker-soon {
+    background-image: asset-url("marker-soon.png");
+  }
+}
+
+
