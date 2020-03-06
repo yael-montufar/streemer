@@ -39,6 +39,7 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 const addGeolocateControl = (map) => {
+
   map.addControl(
     new mapboxgl.GeolocateControl({
       positionOptions: {
@@ -49,13 +50,37 @@ const addGeolocateControl = (map) => {
   );
 };
 
+
+const getUserLocation = (map) =>{
+  navigator.geolocation.getCurrentPosition((data) => {
+    console.log(data)
+    const lat = data.coords.latitude
+    const lng = data.coords.longitude
+
+    map.flyTo({
+    center: [data.coords.longitude, data.coords.latitude],
+    essential: true // this animation is considered essential with respect to prefers-reduced-motion
+  });
+    if (!window.location.href.includes('lat')) {
+       window.location.href = `${window.location.href}?lat=${lat}&lng=${lng}`
+    }
+
+});
+
+//     map.flyTo([data.coords.longitude, data.coords.latitude])
+//    }, () => {
+//   console.log("Rejected") })
+};
+
 const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+
     addGeolocateControl(map);
+    getUserLocation(map);
   }
 };
 
