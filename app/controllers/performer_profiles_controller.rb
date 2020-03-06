@@ -18,7 +18,7 @@ class PerformerProfilesController < ApplicationController
   end
 
   def show
-    @perfomerprofile= PerformerProfile.find(params[:id])
+    @perfomer_profile = PerformerProfile.find(params[:id])
     @events = current_user.performer_profile.events
   end
 
