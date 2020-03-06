@@ -11,7 +11,7 @@ class PerformerProfilesController < ApplicationController
     @performer_profile = PerformerProfile.new(performer_profile_params)
     @performer_profile.user = current_user
     if @performer_profile.save
-      redirect_to performer_path(current_user)
+      redirect_to performer_profile_path(current_user.performer_profile)
     else
       render :new
     end
