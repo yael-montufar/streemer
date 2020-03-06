@@ -11,14 +11,16 @@ class PerformerProfilesController < ApplicationController
     @performer_profile = PerformerProfile.new(performer_profile_params)
     @performer_profile.user = current_user
     if @performer_profile.save
-      redirect_to performer_path(current_user)
+      redirect_to performer_profile_path(current_user.performer_profile)
     else
       render :new
     end
   end
 
   def show
-    @perfomer_profile= PerformerProfile.find(params[:id])
+
+    @perfomer_profile = PerformerProfile.find(params[:id])
+
     @events = current_user.performer_profile.events
   end
 
