@@ -3,6 +3,7 @@ class PerformersController < ApplicationController
 
   def show
     @performer = User.performer.find(params[:id])
+    @is_mine = current_user == @performer
     @review = Review.new
   end
 end
