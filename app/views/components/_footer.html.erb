@@ -3,9 +3,16 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="footer-links justify-content-centre">
-          <a href="#"><i class="fab fa-instagram text-white"></i></a>
-          <a href="#"><i class="fab fa-facebook text-white"></i></a>
-          <a href="#"><i class="fab fa-twitter text-white"></i></a>
+          <% if current_page?(root_path) %>
+            <a href="#"><i class="fab fa-instagram text-white"></i></a>
+            <a href="#"><i class="fab fa-facebook text-white"></i></a>
+            <a href="#"><i class="fab fa-twitter text-white"></i></a>
+          <% else %>
+            <a href="#"><i class="fas fa-map-marked-alt" style="color:white"></i>&nbsp;&nbsp;&nbsp;</a>
+            <a href="#"><i class="far fa-play-circle" style="color:white"></i>&nbsp;&nbsp;&nbsp;</a>
+            <a href="#"><i class="far fa-clock" style="color:white"></i>&nbsp;&nbsp;&nbsp;</a>
+            <a href="#"><i class="fas fa-list-ul fa"></i>&nbsp;&nbsp;&nbsp;</a>
+          <% end %>
         </div>
       </div>
     </div>

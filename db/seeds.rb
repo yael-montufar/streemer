@@ -51,7 +51,9 @@ event_1 = Event.create!(
   performer_profile: performer_1,
   name: "Hello Neighbour",
   description: "Jazz Music",
-  location:  "Lerdo 206, Guerrero, Mexico City, CDMX, Mexico"
+  location:  "Lerdo 206, Guerrero, Mexico City, CDMX, Mexico",
+  starts_at: Time.now + 40.minutes,
+  ends_at: Time.now + 40.minutes + 1.hour,
 )
 event_2 = Event.create!(
   performer_profile: performer_2,
