@@ -1,4 +1,6 @@
 class MapsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
+
 def show
     #Event.near - params, o con search
     unless params.has_key?("lat")

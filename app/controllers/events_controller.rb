@@ -1,14 +1,10 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show, :stream]
 
 
   def index
       @events = Event.geocoded
       @icons = ["fa-play-circle", "fa-clock"]
-  end
-
-  def list
-    @events = Event.all
   end
 
   def show
