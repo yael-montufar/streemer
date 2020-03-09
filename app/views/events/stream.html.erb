@@ -5,14 +5,24 @@
       <div><%= link_to "About", performer_path(@event.performer_profile.user), class: "btn btn-success rounded text-white px-4" %></div>
     </div>
   </h5>
-<iframe
-    src="https://player.twitch.tv/?autoplay=false&video=v174097199"
-    height="420"
-    width="414"
-    frameborder="0"
-    scrolling="no"
-    allowfullscreen="true">
-</iframe>
+
+  <% if @event.twitch_id? %>
+    <iframe
+      src= "<%= @event.twitch_id %>"
+      height="420"
+      width="414"
+      frameborder="0"
+      scrolling="no"
+      allowfullscreen="true">
+    </iframe>
+  <% else %>
+    <%= image_tag @event.photo, alt: "alttext", class: "img-fluid" %>
+  <% end %>
+<!--
+         https://player.twitch.tv/?autoplay=false&video=v174097199
+         https://player.twitch.tv/?autoplay=false&video=v239617707
+
+ -->
       <div><%= submit_tag "Tip", class: "btn btn-success btn-block rounded text-white px-4" %></div>
 
 <iframe frameborder="0"
@@ -20,7 +30,7 @@
         id="chat_embed"
         src="https://www.twitch.tv/embed/hebo/chat"
         height="200"
-        width="414"
+        style="width: 100%"
         allowtransparency="true">
 </iframe>
 
