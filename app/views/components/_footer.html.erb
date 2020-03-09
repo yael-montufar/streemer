@@ -4,10 +4,18 @@
             <a href="#"><i class="fab fa-facebook text-white"></i></a>
             <a href="#"><i class="fab fa-twitter text-white"></i></a>
           <% else %>
+      <!--
+          <% #else current_page?(map_path) || current_page?(events_path)%>
+ -->
             <a href=<%= map_path %>><i class="fas fa-map-marked-alt text-white"></i></a>
             <a href="#"><i class="far fa-play-circle text-white"></i></a>
             <a href="#"><i class="far fa-clock text-white"></i></a>
             <a href=<%= events_path %>><i class="fas fa-list-ul fa text-white"></i></a>
+<!--
+          <% #else %>
+            <a href=<%= map_path %>><i class="fas fa-map-marked-alt text-white"></i></a>
+            <a href=<%= events_path %>><i class="fas fa-list-ul fa text-white"></i></a>
+             -->
           <% end %>
         </div>
       </div>
