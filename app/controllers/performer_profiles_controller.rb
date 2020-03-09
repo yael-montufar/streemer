@@ -11,7 +11,7 @@ class PerformerProfilesController < ApplicationController
     @performer_profile = PerformerProfile.new(performer_profile_params)
     @performer_profile.user = current_user
     if @performer_profile.save
-      redirect_to performer_profile_path(current_user.performer_profile)
+      redirect_to performer_path(current_user)
     else
       render :new
     end
@@ -27,6 +27,6 @@ class PerformerProfilesController < ApplicationController
   private
 
   def performer_profile_params
-    params.require(:performer_profile).permit(:stage_name, :bio)
+    params.require(:performer_profile).permit(:stage_name, :bio, :photo)
   end
 end
