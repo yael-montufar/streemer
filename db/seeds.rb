@@ -4,7 +4,7 @@ Event.destroy_all
 Review.destroy_all
 Tip.destroy_all
 
-puts "Creating performers..."
+puts "Creating live performers..."
 performer_1 = PerformerProfile.create!(
   user: User.create!(email: "performer1@email.com", password: "123456"),
   stage_name: "Some Herd Trouble",
@@ -46,56 +46,157 @@ performer_8 = PerformerProfile.create!(
   bio: "Jayden has been all over Mexico performing at festivals to exhibit his art.  Mexican-born Jayden is an amazing, super-talented street artist. Using tools like a power drill, chisel, and different types of paint, Jayden literally scratches off the surface of buildings to create his masterpieces."
 )
 
-puts "Creating events..."
-event_1 = Event.create!(
+# ========== upcoming events ==============
+
+puts "Creating upcoming events..."
+upcoming_event_1 = Event.create!(
+  performer_profile: performer_1,
+  name: "Futurama",
+  description: "Cyber Punk",
+  location:  "Folton St, San Francisco, California, USA",
+  starts_at: Time.now + rand(1..3).days,
+  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
+  photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792269/c64a13a0-1f9a-390e-a6b7-efbe63ce1014_v6va3s.jpg",
+)
+upcoming_event_2 = Event.create!(
+  performer_profile: performer_2,
+  name: "Velocity",
+  description: "Juggler",
+  starts_at: Time.now - rand(2..60).minutes,
+  ends_at: Time.now + 40.minutes + 1.hour,
+  location: "Campeche 200, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX",
+  photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792294/07ace029-7be6-39e7-b342-780f5cce9523_kxkn1a.jpg",
+)
+upcoming_event_3 = Event.create!(
+  performer_profile: performer_3,
+  name: "Indigoing",
+  description: "Breakdance",
+  starts_at: Time.now + rand(1..3).days,
+  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
+  location: "Av Insurgentes Sur 644, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico",
+  photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792296/tx2ywwIZAF-compress_y3stte.jpg",
+)
+upcoming_event_4 = Event.create!(
+  performer_profile: performer_4,
+  name: "Botanical",
+  description: "Cover Band",
+  starts_at: Time.now + rand(1..3).days,
+  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
+  location: "Fernando Montes de Oca 28 - Ciudad de México, CDMX",
+  photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792298/VEADo0XoZj-compress_flsqex.jpg",
+)
+upcoming_event_5 = Event.create!(
+  performer_profile: performer_5,
+  name: "MonkeyBusiness",
+  description: "Cover Band",
+  starts_at: Time.now + rand(1..3).days,
+  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
+  location: "Av Insurgentes Sur 710, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico",
+  photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792300/dcf0c539-bf19-3303-8c19-ccd1d4da2b67_zq4by6.jpg",
+)
+upcoming_event_6 = Event.create!(
+  performer_profile: performer_6,
+  name: "Soulvibezzz",
+  description: "Jazz",
+  starts_at: Time.now + rand(1..3).days,
+  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
+  location: "Campeche 233, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX",
+  photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792302/6dfc3f05-9f4e-3e11-865c-404cf6296202_gv0buz.jpg",
+)
+upcoming_event_7 = Event.create!(
+  performer_profile: performer_7,
+  name: "Unhinged",
+  description: "Rock",
+  starts_at: Time.now + rand(1..3).days,
+  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
+  location: "Rubens 6, Benito Juárez, San Juan, Mexico City, CDMX, Mexico",
+  photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792304/83185af5-a301-3a0f-8b36-a4aef4658bf3_uli9mc.jpg",
+)
+upcoming_event_8 = Event.create!(
+  performer_profile: performer_8,
+  name: "SouthWest",
+  description: "Street Art",
+  starts_at: Time.now + rand(1..3).days,
+  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
+  location: "Bosque de Chapultepec, Miguel Hidalgo, Mexico City, CDMX, Mexico",
+  photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792306/27e4ec2e-491e-357d-bf5f-f77abe096614_yswyjn.jpg",
+)
+
+# ============== live events ==========
+
+puts "Creating live events..."
+live_event_1 = Event.create!(
   performer_profile: performer_1,
   name: "Hello Neighbour",
   description: "Jazz Music",
   location:  "Lerdo 206, Guerrero, Mexico City, CDMX, Mexico",
-  starts_at: Time.now + 40.minutes,
+  # starts_at: Time.now + 40.minutes,
+  starts_at: Time.now - rand(2..60).minutes,
   ends_at: Time.now + 40.minutes + 1.hour,
+  twitch_id: "https://player.twitch.tv/?autoplay=false&video=v239617707",
 )
-event_2 = Event.create!(
+live_event_2 = Event.create!(
   performer_profile: performer_2,
   name: "Velocity",
   description: "Juggler",
-  location: "Campeche 200, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX"
+  starts_at: Time.now - rand(2..60).minutes,
+  ends_at: Time.now + 40.minutes + 1.hour,
+  location: "Campeche 200, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX",
+  twitch_id: "https://player.twitch.tv/?autoplay=false&video=v238264042",
 )
-event_3 = Event.create!(
+live_event_3 = Event.create!(
   performer_profile: performer_3,
   name: "Indigoing",
   description: "Breakdance",
-  location: "Av Insurgentes Sur 644, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico"
+  starts_at: Time.now - rand(2..60).minutes,
+  ends_at: Time.now + 40.minutes + 2.hour,
+  location: "Av Insurgentes Sur 644, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico",
+  twitch_id: "https://player.twitch.tv/?autoplay=false&video=v238218178",
 )
-event_4 = Event.create!(
+live_event_4 = Event.create!(
   performer_profile: performer_4,
   name: "Botanical",
   description: "Cover Band",
-  location: "Fernando Montes de Oca 28 - Ciudad de México, CDMX"
+  starts_at: Time.now - rand(2..60).minutes,
+  ends_at: Time.now + 40.minutes + 1.hour,
+  location: "Fernando Montes de Oca 28 - Ciudad de México, CDMX",
+  twitch_id: "https://player.twitch.tv/?autoplay=false&video=v238274963",
 )
-event_5 = Event.create!(
+live_event_5 = Event.create!(
   performer_profile: performer_5,
   name: "MonkeyBusiness",
   description: "Cover Band",
-  location: "Av Insurgentes Sur 710, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico"
+  starts_at: Time.now - rand(2..60).minutes,
+  ends_at: Time.now + 40.minutes + 2.hour,
+  location: "Av Insurgentes Sur 710, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico",
+  twitch_id: "https://player.twitch.tv/?autoplay=false&video=v546129488",
 )
-event_6 = Event.create!(
+live_event_6 = Event.create!(
   performer_profile: performer_6,
   name: "Soulvibezzz",
   description: "Jazz",
-  location: "Campeche 233, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX"
+  starts_at: Time.now - rand(2..60).minutes,
+  ends_at: Time.now + 10.minutes + 1.hour,
+  location: "Campeche 233, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX",
+  twitch_id: "https://player.twitch.tv/?autoplay=false&video=v238257236",
 )
-event_7 = Event.create!(
+live_event_7 = Event.create!(
   performer_profile: performer_7,
   name: "Unhinged",
   description: "Rock",
-  location: "Rubens 6, Benito Juárez, San Juan, Mexico City, CDMX, Mexico"
+  starts_at: Time.now - rand(2..60).minutes,
+  ends_at: Time.now + 40.minutes + 2.hour,
+  location: "Rubens 6, Benito Juárez, San Juan, Mexico City, CDMX, Mexico",
+  twitch_id: "https://player.twitch.tv/?autoplay=false&video=v238183579",
 )
-event_8 = Event.create!(
+live_event_8 = Event.create!(
   performer_profile: performer_8,
   name: "SouthWest",
   description: "Street Art",
-  location: "Bosque de Chapultepec, Miguel Hidalgo, Mexico City, CDMX, Mexico"
+  starts_at: Time.now - rand(2..60).minutes,
+  ends_at: Time.now + 40.minutes + 1.hour,
+  location: "Bosque de Chapultepec, Miguel Hidalgo, Mexico City, CDMX, Mexico",
+  twitch_id: "https://player.twitch.tv/?autoplay=false&video=v237750416",
 )
 
 puts "Creating patrons..."
@@ -135,42 +236,42 @@ patron_8 = User.create!(
 puts "Patrons are giving tips..."
 Tip.create!(
   user: patron_1,
-  event: event_1
+  event: live_event_1
 )
 Tip.create!(
   user: patron_2,
-  event: event_1
+  event: live_event_1
 )
 Tip.create!(
   user: patron_2,
-  event: event_2
+  event: live_event_2
 )
 Tip.create!(
   user: patron_3,
-  event: event_3
+  event: live_event_3
 )
 Tip.create!(
   user: patron_4,
-  event: event_4
+  event: live_event_4
 )
 Tip.create!(
   user: patron_5,
-  event: event_5
+  event: live_event_5
 )
 Tip.create!(
   user: patron_6,
-  event: event_6
+  event: live_event_6
 )
 Tip.create!(
   user: patron_7,
-  event: event_7
+  event: live_event_7
 )
 Tip.create!(
   user: patron_8,
-  event: event_8
+  event: live_event_8
 )
 
-puts "Creating reviews for performers.."
+puts "Creating reviews for live performers.."
 
 review_1 = Review.create!(
 content: "Excelent show. I love it!",
@@ -204,3 +305,16 @@ review_8 = Review.create!(
 content: "Nice show",
 performer_profile: performer_8
 )
+
+
+# "https://player.twitch.tv/?autoplay=false&video=v239617707" "london"  "guitar"
+# "https://player.twitch.tv/?autoplay=false&video=v238264042" "praga"   "harp"
+# "https://player.twitch.tv/?autoplay=false&video=v238218178" "italy"   "onemanband"
+# "https://player.twitch.tv/?autoplay=false&video=v238274963" "london"  "guitar"
+# # "https://player.twitch.tv/?autoplay=false&video=v238276318" "london"  "guitar"
+# "https://player.twitch.tv/?autoplay=false&video=v546129488" "praga"   "glass"
+# "https://player.twitch.tv/?autoplay=false&video=v238257236" "japan"   "drummer"
+# "https://player.twitch.tv/?autoplay=false&video=v238183579" "africa"  "kaira"
+# # "https://player.twitch.tv/?autoplay=false&video=v237749076" "hang"
+# # "https://player.twitch.tv/?autoplay=false&video=v237782664" "erhu"
+# "https://player.twitch.tv/?autoplay=false&video=v237750416" "beatbox"
