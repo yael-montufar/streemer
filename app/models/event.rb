@@ -8,4 +8,16 @@ class Event < ApplicationRecord
   has_many :comments
 
   validates :location, presence: true
+
+  scope :not_over, -> { where("ends_at > ?", Time.current) }
+  scope :now, -> { where("? BETWEEN starts_at AND ends_at", Time.current) }
+  scope :soon, -> { where("starts_at > ?", Time.current) }
+
+  def now?
+    (starts_at..ends_at).include?(Time.current)
+  end
+
+  def state
+    now? ? "stream" : "soon"
+  end
 end

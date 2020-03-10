@@ -56,8 +56,8 @@ upcoming_event_1 = Event.new(
   name: "Futurama",
   description: "Cyber Punk",
   location:  "San Francisco",
-  starts_at: Time.now + rand(1..3).days,
-  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
+  starts_at: Time.now - rand(1..3).days,
+  ends_at: Time.now - rand(2..30).minutes + rand(2..6).hours,
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792269/c64a13a0-1f9a-390e-a6b7-efbe63ce1014_v6va3s.jpg")
      upcoming_event_1.photo.attach(io: file, filename: 'singer.jpg', content_type: 'image/jpg')
