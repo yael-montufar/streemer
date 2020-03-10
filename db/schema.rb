@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 2020_03_10_170143) do
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
     t.bigint "user_id"
-    t.bigint "performer_id"
-    t.index ["performer_id"], name: "index_tips_on_performer_id"
+    t.bigint "performer_profile_id"
+    t.index ["performer_profile_id"], name: "index_tips_on_performer_profile_id"
     t.index ["user_id"], name: "index_tips_on_user_id"
   end
 

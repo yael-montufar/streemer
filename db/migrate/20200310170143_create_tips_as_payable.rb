@@ -5,7 +5,7 @@ class CreateTipsAsPayable < ActiveRecord::Migration[5.2]
       t.monetize :amount, currency: { present: false }
       t.string :checkout_session_id # For stripe
       t.references :user # Who's tipping
-      t.references :performer # Who's being tipped
+      t.references :performer_profile # Who's being tipped
     end
   end
 end
