@@ -11,7 +11,7 @@
     </button>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
       <% if current_user.performer? %>
-        <%= link_to "Start a performance!", new_event_path, class: "dropdown-item" %>
+        <%= link_to "My profile", performer_path(current_user), class: "dropdown-item" %>
         <% elsif %>
          <%= link_to "Become a performer", new_performer_profile_path, class: "dropdown-item" %>
       <% end %>

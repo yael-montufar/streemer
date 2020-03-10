@@ -1,5 +1,10 @@
 <div class="btn-toolbar follow-btn-position" role="toolbar" aria-label="Toolbar with button groups">
-  <div class="btn-group mr-2" role="group" aria-label="Second group">
-    <a class="btn btn-success follow-btn text-white" href="#"><%= is_mine ? 'My Tips' : 'Follow' %></a>
+  <div class="btn-group" role="group" aria-label="Second group">
+    <% if is_mine %>
+        <%= link_to 'Create an Event' , new_event_path, class: "btn btn-success follow-btn text-white"  %>
+      <% else %>
+        <a class="btn btn-success follow-btn text-white" href="#">Follow</a>
+    <% end %>
+
   </div>
 </div>

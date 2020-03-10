@@ -1,14 +1,12 @@
-<div class="container headshot shadow-lg" style="background-image: url(<%= cl_image_path performer.performer_profile.photo.key, height: 300, width: 400, crop: :fill %>)">
+<div
+  class="container headshot shadow-lg"
+  <% if performer.performer_profile.photo.attached? %>
+    style="background-image: url(<%= cl_image_path performer.performer_profile.photo.key, height: 300, width: 400, crop: :fill %>)"
+    <% else %>
+    style="background-image: url('https://medgoldresources.com/wp-content/uploads/2018/02/avatar-placeholder-768x768.gif');"
+  <% end %>
+  >
   <div class="container performer-bio">
-    <div class="row nopadding">
-      <div class="col-sm col-lg-12 text-center performer-name">
-        <%= performer.performer_profile.stage_name %>
-      </div>
-    </div>
-    <div class="row nopadding">
-      <div class="col-sm col-lg-12 text-center">
-        <p></p>
-      </div>
-    </div>
+    <%= performer.performer_profile.stage_name %>
   </div>
 </div>

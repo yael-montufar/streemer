@@ -9,7 +9,7 @@ def show
     else
       @longitude = params[:lng].to_f
       @latitude = params[:lat].to_f
-      @events = Event.near([@latitude, @longitude], 5)
+      @events = Event.geocoded#near([@latitude, @longitude], 5)
     end
 
     @markers = @events.map do |event|

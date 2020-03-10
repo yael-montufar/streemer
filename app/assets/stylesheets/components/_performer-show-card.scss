@@ -1,11 +1,11 @@
 .headshot {
-  position: absolute;
+  position: relative;
   width: calc(40vh);
   height: calc(40vh);
-  top: 35%;
-  left: 50%;
+  // top: 35%;
+// left: 50%;
   z-index: 2;
-  transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
   background-size: cover;
   background-position: center;
   border-radius: 10px 10px 10px 10px;
@@ -21,7 +21,6 @@
   background: -webkit-linear-gradient(left, #2c3e50, #bdc3c7);
   background: -o-linear-gradient(left, #2c3e50, #bdc3c7);
   background: linear-gradient(to right, #2c3e50, #bdc3c7);
-
   opacity: .5;
   border-radius: 0px 20px 0px 20px;
   }
@@ -32,8 +31,9 @@
 }
 .performer-bio {
   position:absolute;
-  left: 0%;
-  bottom: 0px;
+  left: 0;
+  bottom: 8px;
   color: white;
+  text-align: center;
 }
 
