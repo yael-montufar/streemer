@@ -4,16 +4,19 @@ class EventsController < ApplicationController
 
   def index
       @events = Event.geocoded
+      @live_events = @events.reject do |event|
+        event.ends_at.past?
+      end
       @icons = []
-      @events.each do |event|
+      @live_events.each do |event|
         @now = Time.now
         @range = event.starts_at..event.ends_at
         if @range === @now
-          @icons << "stream"
+          @icons << "fa-play-circle"
         elsif event.ends_at.past?
           @icons << "X"
         else
-          @icons << "soon"
+          @icons << "fa-clock"
         end
       end
   end
