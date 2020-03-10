@@ -12,13 +12,30 @@ def show
       @events = Event.geocoded#near([@latitude, @longitude], 5)
     end
 
-    @markers = @events.map do |event|
+    @current_events = @events.reject do |event|
+      event.ends_at.past?
+    end
+
+
+    @markers = @current_events.map do |event|
+      @now = Time.now
+      @range = event.starts_at..event.ends_at
+
+      if @range === @now
       {
-        icon: ["stream", "soon"].sample,
+        icon: "stream",
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { event: event })
       }
+      else
+      {
+        icon: "soon",
+        lat: event.latitude,
+        lng: event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
+      }
+      end
     end
   end
 end
