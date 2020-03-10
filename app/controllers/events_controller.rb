@@ -17,6 +17,7 @@ class EventsController < ApplicationController
 
   def stream
     @event = Event.find(params[:id])
+    @comment = Comment.new
   end
 
   def new

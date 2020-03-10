@@ -5,39 +5,32 @@
       <div><%= link_to "About", performer_path(@event.performer_profile.user), class: "btn btn-success rounded text-white px-4" %></div>
     </div>
   </h5>
-<iframe
-    src="https://player.twitch.tv/?video=v40464143&autoplay=false"
-    height="420"
-    width="414"
-    frameborder="0"
-    scrolling="no"
-    allowfullscreen="true">
-</iframe>
+
+  <iframe
+      src="https://player.twitch.tv/?autoplay=false&video=v174097199"
+      height="420"
+      width="414"
+      frameborder="0"
+      scrolling="no"
+      allowfullscreen="true">
+  </iframe>
+
       <div><%= submit_tag "Tip", class: "btn btn-success btn-block rounded text-white px-4" %></div>
 
-<iframe frameborder="0"
-        scrolling="no"
-        id="chat_embed"
-        src="https://www.twitch.tv/embed/hebo/chat"
-        height="200"
-        width="414"
-        allowtransparency="true">
-</iframe>
 
+<p class="ml-2 mt-4">Live Comments</p>
+<% if @event.comments.blank? %>
+  <p class="ml-2">Share your thoughts!</p>
+<% else %>
+<% @event.comments.last(10).each do |comment| %>
+    <p class="ml-2"><%= comment.content %></p>
+  <% end %>
+<% end %>
 
-<!--   <video autoplay muted loop id="musicVideo-half">
-    <source src="https://res.cloudinary.com/dri7xzd5a/video/upload/v1583341014/1027910684-preview_vqs6dg.mp4" type="video/mp4">
-  </video> -->
+    <%= simple_form_for [@event, @comment] do |f| %>
+      <%= f.input :content, label: false, placeholder: "Comment something nice..." %>
+      <%= f.submit "add a comment", class: "btn btn-success" %>
+    <% end %>
 
-<!-- tip card / stripe -->
-<!-- <div class="tip-performer-card justify-content-centre">
-<div class="col-lg-6">
-  <h5 class="mt-4">Give a tip</h5>
-  <h3 class="tip-text">Support your favourite local artist</h3>
-  <%#= submit_tag "$2.00", class: "btn btn-success text-white" %>
-  <%#= submit_tag "$5.00", class: "btn btn-success text-white" %>
-  <%#= submit_tag "$10.00", class: "btn btn-success text-white" %>
-  <%#= submit_tag "Other", class: "btn btn-success text-white" %>
 </div>
-</div> -->
-</div>
+
