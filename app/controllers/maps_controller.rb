@@ -12,12 +12,12 @@ def show
       @events = Event.geocoded#near([@latitude, @longitude], 5)
     end
 
-    @current_events = @events.reject do |event|
+    @live_events = @events.reject do |event|
       event.ends_at.past?
     end
 
 
-    @markers = @current_events.map do |event|
+    @markers = @live_events.map do |event|
       @now = Time.now
       @range = event.starts_at..event.ends_at
 
