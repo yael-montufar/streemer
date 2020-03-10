@@ -22,21 +22,25 @@
       width: 414, height: 420, crop: :fit) %>
   <% end %>
 
-      <div><%= submit_tag "Tip", class: "btn btn-success btn-block rounded text-white px-4" %></div>
+  <div class= "mt-3"></div>
+
+  <%= render "tips/buttons", performer_profile: @event.performer_profile %>
 
 
-<p class="ml-2 mt-4">Live Comments</p>
-<% if @event.comments.blank? %>
-  <p class="ml-2">Share your thoughts!</p>
-<% else %>
-<% @event.comments.last(10).each do |comment| %>
-    <p class="ml-2"><%= comment.content %></p>
-  <% end %>
-<% end %>
+    <p class="ml-2 mt-4 mb-1">Live Comments</p>
 
     <%= simple_form_for [@event, @comment] do |f| %>
       <%= f.input :content, label: false, placeholder: "Comment something nice..." %>
-      <%= f.submit "add a comment", class: "btn btn-success" %>
+  <!--     <%#= f.submit "add", class: "ml-3 btn btn-info" %> -->
     <% end %>
+
+
+<% if @event.comments.blank? %>
+  <p class="ml-2">What people are saying!</p>
+<% else %>
+<% @event.comments.last(5).each do |comment| %>
+    <p class="ml-2"><%= comment.content %></p>
+  <% end %>
+<% end %>
 
 </div>

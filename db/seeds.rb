@@ -61,7 +61,7 @@ upcoming_event_1 = Event.new(
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792269/c64a13a0-1f9a-390e-a6b7-efbe63ce1014_v6va3s.jpg")
      upcoming_event_1.photo.attach(io: file, filename: 'singer.jpg', content_type: 'image/jpg')
-     upcoming_event_1.save
+     upcoming_event_1.save!
 
 upcoming_event_2 = Event.create!(
   performer_profile: performer_2,
@@ -74,7 +74,7 @@ upcoming_event_2 = Event.create!(
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792294/07ace029-7be6-39e7-b342-780f5cce9523_kxkn1a.jpg")
      upcoming_event_2.photo.attach(io: file, filename: 'amp.jpg', content_type: 'image/jpg')
-     upcoming_event_2.save
+     upcoming_event_2.save!
 
 upcoming_event_3 = Event.create!(
   performer_profile: performer_3,
@@ -87,7 +87,7 @@ upcoming_event_3 = Event.create!(
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792296/tx2ywwIZAF-compress_y3stte.jpg")
      upcoming_event_3.photo.attach(io: file, filename: 'singer.jpg', content_type: 'image/jpg')
-     upcoming_event_3.save
+     upcoming_event_3.save!
 
 upcoming_event_4 = Event.create!(
   performer_profile: performer_4,
@@ -100,7 +100,7 @@ upcoming_event_4 = Event.create!(
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792298/VEADo0XoZj-compress_flsqex.jpg")
      upcoming_event_4.photo.attach(io: file, filename: 'chello.jpg', content_type: 'image/jpg')
-     upcoming_event_4.save
+     upcoming_event_4.save!
 
 upcoming_event_5 = Event.create!(
   performer_profile: performer_5,
@@ -113,7 +113,7 @@ upcoming_event_5 = Event.create!(
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792300/dcf0c539-bf19-3303-8c19-ccd1d4da2b67_zq4by6.jpg")
      upcoming_event_5.photo.attach(io: file, filename: 'tango.jpg', content_type: 'image/jpg')
-     upcoming_event_5.save
+     upcoming_event_5.save!
 
 upcoming_event_6 = Event.create!(
   performer_profile: performer_6,
@@ -126,7 +126,7 @@ upcoming_event_6 = Event.create!(
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792302/6dfc3f05-9f4e-3e11-865c-404cf6296202_gv0buz.jpg")
      upcoming_event_6.photo.attach(io: file, filename: 'fire.jpg', content_type: 'image/jpg')
-     upcoming_event_6.save
+     upcoming_event_6.save!
 
 upcoming_event_7 = Event.create!(
   performer_profile: performer_7,
@@ -139,7 +139,7 @@ upcoming_event_7 = Event.create!(
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792304/83185af5-a301-3a0f-8b36-a4aef4658bf3_uli9mc.jpg")
      upcoming_event_7.photo.attach(io: file, filename: 'break-dance.jpg', content_type: 'image/jpg')
-     upcoming_event_7.save
+     upcoming_event_7.save!
 
 upcoming_event_8 = Event.create!(
   performer_profile: performer_8,
@@ -152,7 +152,7 @@ upcoming_event_8 = Event.create!(
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792306/27e4ec2e-491e-357d-bf5f-f77abe096614_yswyjn.jpg")
      upcoming_event_8.photo.attach(io: file, filename: 'drummers.jpg', content_type: 'image/jpg')
-     upcoming_event_8.save
+     upcoming_event_8.save!
 
 
 # ============== live events ==========
@@ -268,40 +268,58 @@ patron_8 = User.create!(
 
 puts "Patrons are giving tips..."
 Tip.create!(
+  amount: 5,
+  state: "paid",
   user: patron_1,
-  event: live_event_1
+  performer_profile: performer_1
 )
 Tip.create!(
+  amount: 10,
+  state: "pending",
   user: patron_2,
-  event: live_event_1
+  performer_profile: performer_1
 )
 Tip.create!(
+  amount: 1,
+  state: "paid",
   user: patron_2,
-  event: live_event_2
+  performer_profile: performer_2
 )
 Tip.create!(
+  amount: 5,
+  state: "paid",
   user: patron_3,
-  event: live_event_3
+  performer_profile: performer_3
 )
 Tip.create!(
+  amount: 1,
+  state: "pending",
   user: patron_4,
-  event: live_event_4
+  performer_profile: performer_4
 )
 Tip.create!(
+  amount: 5,
+  state: "paid",
   user: patron_5,
-  event: live_event_5
+  performer_profile: performer_5
 )
 Tip.create!(
+  amount: 10,
+  state: "pending",
   user: patron_6,
-  event: live_event_6
+  performer_profile: performer_6
 )
 Tip.create!(
+  amount: 5,
+  state: "paid",
   user: patron_7,
-  event: live_event_7
+  performer_profile: performer_7
 )
 Tip.create!(
+  amount: 2,
+  state: "paid",
   user: patron_8,
-  event: live_event_8
+  performer_profile: performer_8
 )
 
 puts "Creating reviews for live performers.."

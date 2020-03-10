@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col-md-3"><%= @performer.stage_name %></div>
+    <div class="col">
+      <h1>Checkout summary</h1>
+      <p>Tip for <strong><%= @performer.stage_name %></strong> for <strong><%= humanized_money_with_symbol @tip.amount %></strong></p>
+      <button id="pay" class="btn btn-success">Tip</button>
+
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @tip.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
+  </div>
+</div>

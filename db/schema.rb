@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_225049) do
+ActiveRecord::Schema.define(version: 2020_03_10_170143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,11 +81,12 @@ ActiveRecord::Schema.define(version: 2020_03_09_225049) do
   end
 
   create_table "tips", force: :cascade do |t|
-    t.bigint "event_id"
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
     t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_tips_on_event_id"
+    t.bigint "performer_profile_id"
+    t.index ["performer_profile_id"], name: "index_tips_on_performer_profile_id"
     t.index ["user_id"], name: "index_tips_on_user_id"
   end
 
@@ -107,6 +108,4 @@ ActiveRecord::Schema.define(version: 2020_03_09_225049) do
   add_foreign_key "events", "performer_profiles"
   add_foreign_key "performer_profiles", "users"
   add_foreign_key "reviews", "performer_profiles"
-  add_foreign_key "tips", "events"
-  add_foreign_key "tips", "users"
 end
