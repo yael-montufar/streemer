@@ -18,7 +18,8 @@
 
     </iframe>
   <% else %>
-    <%= image_tag @event.photo, alt: "alttext", class: "img-fluid" %>
+  <%= cl_image_tag(@event.photo.key,
+      width: 414, height: 420, crop: :fit) %>
   <% end %>
 
       <div><%= submit_tag "Tip", class: "btn btn-success btn-block rounded text-white px-4" %></div>
@@ -39,4 +40,3 @@
     <% end %>
 
 </div>
-
