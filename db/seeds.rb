@@ -280,7 +280,7 @@ Tip.create!(
   performer_profile: performer_1
 )
 Tip.create!(
-  amount: 50,
+  amount: 1,
   state: "paid",
   user: patron_2,
   performer_profile: performer_2
@@ -292,8 +292,8 @@ Tip.create!(
   performer_profile: performer_3
 )
 Tip.create!(
-  amount: 5,
-  state: "paid",
+  amount: 1,
+  state: "pending",
   user: patron_4,
   performer_profile: performer_4
 )
@@ -304,8 +304,8 @@ Tip.create!(
   performer_profile: performer_5
 )
 Tip.create!(
-  amount: 5,
-  state: "paid",
+  amount: 10,
+  state: "pending",
   user: patron_6,
   performer_profile: performer_6
 )
@@ -316,7 +316,7 @@ Tip.create!(
   performer_profile: performer_7
 )
 Tip.create!(
-  amount: 5,
+  amount: 2,
   state: "paid",
   user: patron_8,
   performer_profile: performer_8
