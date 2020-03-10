@@ -1,13 +1,14 @@
 import consumer from "./consumer";
 
-  const channel Config = {
-  // same name as the Channel class generated in rails
+const channelConfig = {
+  // Same name as the Channel class you generated in Rails
   channel: "WaveChannel"
 };
 
-
 const channelCallbacks = {
+  // Called when the subscription is created.
   initialized: () => {},
+  // Called when a broadcast is received
   received: () => {}
 };
 
