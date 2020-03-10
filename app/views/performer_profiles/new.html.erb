@@ -1,7 +1,9 @@
-<h2>Add performer details:</h2>
-<%= simple_form_for @performer_profile  do |f| %>
-  <%= f.input :stage_name %>
-  <%= f.input :bio %>
-  <%= f.input :photo %>
-  <%= f.submit "create", class: "btn btn-primary" %>
-<% end %>
+<div class="container p-5 ">
+  <h4>Add performer details:</h4>
+    <%= simple_form_for @performer_profile  do |f| %>
+    <%= f.input :stage_name %>
+    <%= f.input :bio %>
+     <%= f.input :photo %>
+    <%= f.submit "create", class: "btn btn-success" %>
+  <% end %>
+</div>
