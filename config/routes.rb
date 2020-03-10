@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'comments/create'
   devise_for :users
   root to: 'pages#home'
+  # mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   resources :events, only: [:index, :show, :list, :new, :create] do
     resource :comments, only: :create
@@ -22,3 +23,4 @@ Rails.application.routes.draw do
   resource :map, only: :show
 
 end
+

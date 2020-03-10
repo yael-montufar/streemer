@@ -13,6 +13,10 @@ class EventsController < ApplicationController
   end
 
   def stream
+    if params[:tip] == "success"
+      flash[:notice] = "Tip Successful"
+    end
+
     @event = Event.find(params[:id])
     @comment = Comment.new
   end

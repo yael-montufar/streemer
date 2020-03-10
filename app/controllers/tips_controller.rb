@@ -17,8 +17,8 @@ class TipsController < ApplicationController
         currency: 'usd',
         quantity: 1
       }],
-      success_url: performer_url(@performer_profile.user),
-      cancel_url: performer_url(@performer_profile.user)
+      success_url: "#{request.referer}?tip=success",
+      cancel_url: "#{request.referer}?tip=fail"
     )
 
     @tip.update!(checkout_session_id: session.id)
