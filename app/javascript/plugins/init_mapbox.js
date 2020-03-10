@@ -62,9 +62,10 @@ const getUserLocation = (map) =>{
     center: [data.coords.longitude, data.coords.latitude],
     essential: true // this animation is considered essential with respect to prefers-reduced-motion
   });
-    if (!window.location.href.includes('lat')) {
-       window.location.href = `${window.location.href}?lat=${lat}&lng=${lng}`
-    }
+
+  // if (!window.location.href.includes('lat')) {
+  //    window.location.href = `${window.location.href}?lat=${lat}&lng=${lng}`
+  // }
 
 });
 
