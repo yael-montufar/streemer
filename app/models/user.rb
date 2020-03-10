@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :tips, dependent: :destroy
   has_one :performer_profile, dependent: :destroy
   has_many :reviews, through: :performer_profile
+  has_many :comments
 
   scope :performer, -> { joins(:performer_profile) }
 
