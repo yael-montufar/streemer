@@ -1,8 +1,9 @@
-<div class="container-fluid event-show">
+<div class="container-fluid event-show text-center">
   <h2 class="ml-5 pt-1 mt-3 mb-3"><%= @event.name %></h2>
-  <p><%= link_to @user.email, performer_path(@user) %></p>
+  <p><%= link_to @event.performer_profile.stage_name, performer_path(@user) %></p>
+    <div class="container" style="background-color:black">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqGf5c3ISql9byx_IiaTaAZTWFxlWZEtOnGltQwosSVG0_LwzJ" alt="">
+    </div>
   <%= link_to "Live Stream", stream_event_path %>
 </div>
 <%#= link_to "Return to view all artists", events_path, class: "text-decoration-none" %>
-
-

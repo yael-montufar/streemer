@@ -18,13 +18,15 @@ class PerformerProfilesController < ApplicationController
   end
 
   def show
-    @perfomer_profile= PerformerProfile.find(params[:id])
+
+    @perfomer_profile = PerformerProfile.find(params[:id])
+
     @events = current_user.performer_profile.events
   end
 
   private
 
   def performer_profile_params
-    params.require(:performer_profile).permit(:stage_name, :bio)
+    params.require(:performer_profile).permit(:stage_name, :bio, :photo)
   end
 end

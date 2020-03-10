@@ -1,4 +1,6 @@
 class MapsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
+
 def show
     #Event.near - params, o con search
     unless params.has_key?("lat")
@@ -7,7 +9,7 @@ def show
     else
       @longitude = params[:lng].to_f
       @latitude = params[:lat].to_f
-      @events = Event.near([@latitude, @longitude], 5)
+      @events = Event.geocoded#near([@latitude, @longitude], 5)
     end
 
     @markers = @events.map do |event|

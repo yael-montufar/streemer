@@ -6,14 +6,20 @@
     </div>
   </h5>
 
-  <iframe
-      src="https://player.twitch.tv/?autoplay=false&video=v174097199"
+
+  <% if @event.twitch_id? %>
+    <iframe
+      src= "<%= @event.twitch_id %>"
       height="420"
       width="414"
       frameborder="0"
       scrolling="no"
       allowfullscreen="true">
-  </iframe>
+
+    </iframe>
+  <% else %>
+    <%= image_tag @event.photo, alt: "alttext", class: "img-fluid" %>
+  <% end %>
 
       <div><%= submit_tag "Tip", class: "btn btn-success btn-block rounded text-white px-4" %></div>
 

@@ -1,13 +1,10 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show, :stream]
 
 
   def index
       @events = Event.geocoded
-  end
-
-  def list
-    @events = Event.all
+      @icons = ["fa-play-circle", "fa-clock"]
   end
 
   def show
@@ -29,7 +26,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.performer_profile = current_user.performer_profile
     if @event.save
-      redirect_to performer_profile_path(current_user.performer_profile)
+      redirect_to performer_path(current_user)
     else
       render :new
     end

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
 
-  resources :performer_profiles, only: [:new, :create, :show]
+  resources :performer_profiles, only: [:new, :create]
 
   resource :map, only: :show
 
