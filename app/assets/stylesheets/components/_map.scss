@@ -6,3 +6,21 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+.map-carousel {
+  position: absolute;
+  bottom: 58px;
+  left: 0;
+  right: 0;
+
+  .slick-slide {
+    opacity: 0.5;
+    transform: scale(0.8);
+    transition: transform 0.25s, opacity 0.25s;
+
+    &.slick-center {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
