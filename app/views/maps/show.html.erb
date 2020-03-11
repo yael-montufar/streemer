@@ -1,6 +1,8 @@
-<div>
+<div id="carousel">
   <% @events.each do |event| %>
-    <div style="background-color: #a00"><%= event.id %></div>
+    <div class="carousel-item-map" data-id="<%= event.id %>" style="background-color: #a00">
+      <%= event.id %>
+    </div>
   <% end %>
 </div>
 <div
