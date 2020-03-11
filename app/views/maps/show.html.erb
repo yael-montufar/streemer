@@ -1,10 +1,19 @@
-<div>
-  <% @events.each do |event| %>
-    <div style="background-color: #a00"><%= event.id %></div>
-  <% end %>
-</div>
 <div
   id="map"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+
+<div class="map-carousel">
+  <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+    <% @events.each do |event| %>
+      <div>
+        <% if event.photo.attached?  %>
+          <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid" %>
+        <%else %>
+          <%= image_tag "http://placehold.it/400x300?text=No Image", alt: "Default Event Image", class: "img-fluid" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
