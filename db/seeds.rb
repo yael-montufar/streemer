@@ -53,11 +53,11 @@ performer_8 = PerformerProfile.create!(
 puts "Creating upcoming events..."
 upcoming_event_1 = Event.new(
   performer_profile: performer_1,
-  name: "Futurama",
+  name: "Event 1",
   description: "Cyber Punk",
   location:  "San Francisco",
-  starts_at: Time.now - rand(1..3).days,
-  ends_at: Time.now - rand(2..30).minutes + rand(2..6).hours,
+  starts_at: Time.now + 1.day,
+  ends_at: Time.now + 2.days,
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792269/c64a13a0-1f9a-390e-a6b7-efbe63ce1014_v6va3s.jpg")
      upcoming_event_1.photo.attach(io: file, filename: 'singer.jpg', content_type: 'image/jpg')
@@ -65,10 +65,10 @@ file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v158379226
 
 upcoming_event_2 = Event.create!(
   performer_profile: performer_2,
-  name: "Velocity",
+  name: "Event 2",
   description: "Juggler",
-  starts_at: Time.now - rand(2..60).minutes,
-  ends_at: Time.now + 40.minutes + 1.hour,
+  starts_at: Time.now + 6.hours,
+  ends_at: Time.now + 12.hours,
   location: "Campeche 200, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX",
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792294/07ace029-7be6-39e7-b342-780f5cce9523_kxkn1a.jpg",
 )
