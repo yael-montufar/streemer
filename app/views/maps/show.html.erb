@@ -1,5 +1,10 @@
-  <div
-    id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+<div>
+  <% @events.each do |event| %>
+    <div style="background-color: #a00"><%= event.id %></div>
+  <% end %>
+</div>
+<div
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
