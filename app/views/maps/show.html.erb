@@ -7,7 +7,7 @@
 <div class="map-carousel">
   <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
     <% @events.each do |event| %>
-      <div>
+      <div class="carousel-item-map" data-id="<%= event.id %>">
         <% if event.photo.attached?  %>
           <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid" %>
         <%else %>
