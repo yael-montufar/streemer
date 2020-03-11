@@ -22,6 +22,7 @@ class MapsController < ApplicationController
 
     @markers = @events.map do |event|
       {
+        id: event.id,
         icon: event.state,
         lat: event.latitude,
         lng: event.longitude,

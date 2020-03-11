@@ -6,15 +6,14 @@
     <% @live_events.each_with_index do |event, index| %>
       <div class="card mb-3 ">
         <div class="container card-header d-flex justify-content-between">
-          <h5 class=""><%= link_to event.name ,event_path(event), class: "text-decoration-none" %></h5>
+          <h5 class=""><%= link_to event.name, event_path(event), class: "text-decoration-none" %></h5>
           <i class="far <%= @icons[index] %>"></i>
         </div>
         <div class="card-body d-flex justify-content-between">
-          <img class="mr-3 rounded-circle" width="50" height="50" src="https://res.cloudinary.com/dri7xzd5a/image/upload/v1583346474/yael_i2g4li.jpg" alt="">
+          <%= render "users/avatar", user: event.performer_profile.user %>
           <h5 class="card-text text-center"><%= event.performer_profile.stage_name %></h5>
         </div>
       </div>
     <% end %>
   </div>
-
 </div>
