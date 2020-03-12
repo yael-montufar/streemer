@@ -78,6 +78,9 @@ GEM
     dotenv-rails (2.7.5)
       dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
+    dotiw (4.0.1)
+      actionpack (>= 4)
+      i18n
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.12.2)
@@ -239,6 +242,7 @@ DEPENDENCIES
   cloudinary (~> 1.12.0)
   devise
   dotenv-rails
+  dotiw
   faker!
   font-awesome-sass (~> 5.12.0)
   geocoder
