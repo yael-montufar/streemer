@@ -21,6 +21,10 @@
     &.slick-center {
       opacity: 1;
       transform: scale(1);
+
+      .card-trip-button {
+        display: block;
+      }
     }
   }
 }

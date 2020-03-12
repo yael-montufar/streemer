@@ -7,8 +7,6 @@
 <div class="map-carousel">
   <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
     <% @events.each do |event| %>
-
-
       <div class="carousel-item-map card-trip" data-id="<%= event.id %>">
         <% if event.photo.attached?  %>
           <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid" %>
@@ -16,6 +14,7 @@
           <%= image_tag "http://placehold.it/400x300?text=No Image", alt: "Default Event Image", class: "img-fluid" %>
         <% end %>
 
+        <%= link_to "More", stream_event_path(event), class: "btn btn-success btn-sm card-trip-button" %>
         <div class="card-trip-infos">
           <div>
             <h2><%= event.name %></h2>

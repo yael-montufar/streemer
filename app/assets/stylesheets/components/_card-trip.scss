@@ -3,6 +3,16 @@
   background: white;
   position: relative;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  .card-trip-button {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    z-index: 2;
+    margin: 0 auto;
+    display: none;
+    opacity: .8;
+  }
 }
 
 .card-trip > img {
@@ -32,7 +42,7 @@
   background: linear-gradient(rgba(0,0,0,0.5), transparent);
 
   position: absolute;
-  z-index: 99999;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;

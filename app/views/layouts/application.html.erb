@@ -59,6 +59,7 @@
         const currentItem = event.currentTarget
         const itemId = Number(currentItem.querySelector(".slick-center").dataset.id)
 
+        // window.markers[itemId].setRotation(180) js to rotate marker
         map.flyTo({
           center: window.markers[itemId].getLngLat(),
           zoom: 16,
