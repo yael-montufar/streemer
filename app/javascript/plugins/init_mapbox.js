@@ -21,16 +21,15 @@ const buildMap = () => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
     const markerElement = buildMarker(marker)
 
     const markerInstance = new mapboxgl.Marker(markerElement)
       .setLngLat([ marker.lng, marker.lat ])
-      // .setPopup(popup)
       .addTo(map);
-
     window.markers[marker.id] = markerInstance;
+
   });
 };
 
@@ -101,6 +100,7 @@ const logMarkers = (markers) => {
   //       essential: true // this animation is considered essential with respect to prefers-reduced-motion
   //     });
   //   }));
+
 }
 
 
@@ -116,6 +116,21 @@ const initMapbox = () => {
     addGeolocateControl(map);
     getUserLocation(map);
     logMarkers(markers);
+
+
+// =================== get marker id =================
+    Object.keys(window.markers).forEach((markerId) => {
+      const marker = window.markers[markerId];
+      marker.getElement().addEventListener('click', function(){
+        const slickSlideElement = document.querySelector(`.slick-slide[data-id='${markerId}']`);
+        const slickSlides = [...slickSlideElement.parentElement.childNodes]
+        const selectedIndex = slickSlides.indexOf(slickSlideElement)
+
+        console.log(selectedIndex)
+        $('[data-slick]').slick('slickGoTo', selectedIndex);
+        // $('[data-slick]').trigger("swipe");
+      });
+    });
   }
 };
 

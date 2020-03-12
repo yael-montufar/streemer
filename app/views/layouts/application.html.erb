@@ -59,6 +59,7 @@
         const currentItem = event.currentTarget
         const itemId = Number(currentItem.querySelector(".slick-center").dataset.id)
 
+        // console.log(itemId)
         // window.markers[itemId].setRotation(180) js to rotate marker
         map.flyTo({
           center: window.markers[itemId].getLngLat(),
@@ -66,7 +67,18 @@
           essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
 
+
+// ==================== center carousel by marker id ===========================
+        Object.keys(window.markers).forEach((markerId) => {
+          window.markers[markerId].setRotation(0)
+        })
+        window.markers[itemId].setRotation(180)
+
       })
+
+
+      // console.log(currentSlide);
+
     </script>
   </body>
 
