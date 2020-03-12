@@ -26,21 +26,19 @@
 
   <%= render "tips/buttons", performer_profile: @event.performer_profile %>
 
+<!-- ======================================================================= -->
+  <% unless @event.starts_at.future? %>
+      <p class="ml-2 mt-4 mb-1">Live Comments</p>
 
-    <p class="ml-2 mt-4 mb-1">Live Comments</p>
+      <%= simple_form_for [@event, @comment] do |f| %>
+        <%= f.input :content, label: false, placeholder: "Comment something nice..." %>
+    <!--     <%#= f.submit "add", class: "ml-3 btn btn-info" %> -->
+      <% end %>
 
-    <%= simple_form_for [@event, @comment] do |f| %>
-      <%= f.input :content, label: false, placeholder: "Comment something nice..." %>
-  <!--     <%#= f.submit "add", class: "ml-3 btn btn-info" %> -->
+      <p class="ml-2">What people are saying!</p>
+      <% else %>
+    <% @event.comments.last(5).each do |comment| %>
+      <p class="ml-2"><%= comment.content %></p>
     <% end %>
-
-
-<% if @event.comments.blank? %>
-  <p class="ml-2">What people are saying!</p>
-<% else %>
-<% @event.comments.last(5).each do |comment| %>
-    <p class="ml-2"><%= comment.content %></p>
   <% end %>
-<% end %>
-
 </div>
