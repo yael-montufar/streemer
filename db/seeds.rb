@@ -62,8 +62,8 @@ upcoming_event_1 = Event.create!(
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792294/07ace029-7be6-39e7-b342-780f5cce9523_kxkn1a.jpg",
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792294/07ace029-7be6-39e7-b342-780f5cce9523_kxkn1a.jpg")
-     upcoming_event_2.photo.attach(io: file, filename: 'amp.jpg', content_type: 'image/jpg')
-     upcoming_event_2.save!
+     upcoming_event_1.photo.attach(io: file, filename: 'amp.jpg', content_type: 'image/jpg')
+     upcoming_event_1.save!
 
 upcoming_event_2 = Event.create!(
   performer_profile: performer_4,
@@ -75,8 +75,8 @@ upcoming_event_2 = Event.create!(
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792298/VEADo0XoZj-compress_flsqex.jpg",
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792298/VEADo0XoZj-compress_flsqex.jpg")
-     upcoming_event_4.photo.attach(io: file, filename: 'chello.jpg', content_type: 'image/jpg')
-     upcoming_event_4.save!
+     upcoming_event_2.photo.attach(io: file, filename: 'chello.jpg', content_type: 'image/jpg')
+     upcoming_event_2.save!
 
 
 upcoming_event_3 = Event.create!(
@@ -89,8 +89,8 @@ upcoming_event_3 = Event.create!(
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792302/6dfc3f05-9f4e-3e11-865c-404cf6296202_gv0buz.jpg",
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792302/6dfc3f05-9f4e-3e11-865c-404cf6296202_gv0buz.jpg")
-     upcoming_event_6.photo.attach(io: file, filename: 'fire.jpg', content_type: 'image/jpg')
-     upcoming_event_6.save!
+     upcoming_event_3.photo.attach(io: file, filename: 'fire.jpg', content_type: 'image/jpg')
+     upcoming_event_3.save!
 
 
 upcoming_event_4 = Event.create!(
@@ -103,8 +103,8 @@ upcoming_event_4 = Event.create!(
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792306/27e4ec2e-491e-357d-bf5f-f77abe096614_yswyjn.jpg",
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792306/27e4ec2e-491e-357d-bf5f-f77abe096614_yswyjn.jpg")
-     upcoming_event_8.photo.attach(io: file, filename: 'drummers.jpg', content_type: 'image/jpg')
-     upcoming_event_8.save!
+     upcoming_event_4.photo.attach(io: file, filename: 'drummers.jpg', content_type: 'image/jpg')
+     upcoming_event_4.save!
 
 
 # ============== live events ==========
