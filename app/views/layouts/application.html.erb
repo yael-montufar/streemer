@@ -64,19 +64,22 @@
         map.flyTo({
           center: window.markers[itemId].getLngLat(),
           zoom: 16,
+          speed: 2.5,
           essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
 
 
 // ==================== center carousel by marker id ===========================
-        Object.keys(window.markers).forEach((markerId) => {
-          const marker = window.markers[markerId]
-          // marker.setRotation(0)
-          marker.getPopup().remove()
-        })
 
-        const marker = window.markers[itemId]
-        marker.togglePopup()
+        map.on("zoomend", () => {
+          Object.keys(window.markers).forEach((markerId) => {
+            const marker = window.markers[markerId]
+            // marker.setRotation(0)
+            marker.getPopup().remove()
+          })
+          const marker = window.markers[itemId]
+          marker.togglePopup()
+        })
         // .setRotation(180)
       })
 

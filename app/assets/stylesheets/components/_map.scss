@@ -1,6 +1,22 @@
 .mapboxgl-popup {
   max-width: 200px;
+  border-radius: 50%;
+  padding-bottom: 25px;
 }
+
+.mapboxgl-popup-content {
+  background-color: transparentize($success, 0.2) !important;
+  padding-bottom: 10px !important;
+  color: white;
+}
+.mapboxgl-popup-tip {
+  border-top-color: transparentize($success, 0.2) !important;
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
 
 .mapboxgl-popup-content {
   text-align: center;
