@@ -1,4 +1,6 @@
 class TipsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new, :create]
+
   def create
     @tip       = Tip.new(tip_params)
     @tip.state = "pending"
@@ -26,6 +28,10 @@ class TipsController < ApplicationController
   end
 
   def new
+    if params[:tip] == "success"
+      flash[:notice] = "Tip Successful"
+    end
+
     @performer = User.find(params[:performer_id])
   end
 
