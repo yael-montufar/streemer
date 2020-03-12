@@ -3,17 +3,36 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
-
 <div class="map-carousel">
   <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
     <% @events.each do |event| %>
-      <div class="carousel-item-map" data-id="<%= event.id %>">
+      <div class="carousel-item-map card-trip" data-id="<%= event.id %>">
         <% if event.photo.attached?  %>
           <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid" %>
         <%else %>
           <%= image_tag "http://placehold.it/400x300?text=No Image", alt: "Default Event Image", class: "img-fluid" %>
         <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= event.name %></h2>
+            <p><%= event.description %></p>
+          </div>
+            <div
+            <% if event.performer_profile.photo.attached? %>
+                style="background-image: url(<%= cl_image_path performer.performer_profile.photo.key, height: 300, width: 400, crop: :fill %>)"
+                <% else %>
+                style="background-image: url('https://medgoldresources.com/wp-content/uploads/2018/02/avatar-placeholder-768x768.gif');"
+              <% end %>
+            >
+            </div>
+          <!-- <h2 class="card-trip-pricing"></h2> -->
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
       </div>
     <% end %>
   </div>
 </div>
+
+
+
+
