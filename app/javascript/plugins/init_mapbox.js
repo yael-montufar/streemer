@@ -56,7 +56,7 @@ const addGeolocateControl = (map) => {
 
 const getUserLocation = (map) =>{
   navigator.geolocation.getCurrentPosition((data) => {
-    console.log(data)
+    // console.log(data)
     const lat = data.coords.latitude
     const lng = data.coords.longitude
 
@@ -76,19 +76,46 @@ const getUserLocation = (map) =>{
 //   console.log("Rejected") })
 };
 
+const logMarkers = (markers) => {
+
+  const carouselItem = document.querySelectorAll(".carousel-item-map");
+  // const carouselItem = document.getElementById("carousel-item-map");
+
+  // markers.forEach((marker) => {
+  //   console.log(marker.id)
+  // });
+
+
+  // console.log(markers[0]) should use window.markrs to use marker.id
+
+
+  carouselItem.forEach(item =>
+    item.addEventListener("click", (event) => {
+      // console.log(event);
+      const itemId = Number(event.currentTarget.dataset.id);
+      console.log(itemId);
+      // console.log(markers[17].lat);
+      map.flyTo({
+        center: window.markers[itemId].getLngLat(),
+        zoom: 16,
+        essential: true // this animation is considered essential with respect to prefers-reduced-motion
+      });
+    }));
+}
+
+
 const initMapbox = () => {
   if (mapElement) {
     window.markers = {};
 
     const map = buildMap();
     window.map = map;
-
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
-
     addGeolocateControl(map);
     getUserLocation(map);
+    logMarkers(markers);
   }
 };
 
