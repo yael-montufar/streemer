@@ -25,6 +25,10 @@ class TipsController < ApplicationController
     redirect_to new_tip_payment_path(@tip)
   end
 
+  def new
+    @performer = User.find(params[:performer_id])
+  end
+
   private
 
   def tip_params

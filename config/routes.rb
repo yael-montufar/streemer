@@ -8,7 +8,10 @@ Rails.application.routes.draw do
     resource :comments, only: :create
     get :stream, on: :member
   end
+
   resources :performers, only: [:show] do
+    # /performers/:performer_id/tips/new
+    resources :tips, only: [:new]
     resources :reviews, only: [:create]
   end
 
@@ -21,6 +24,5 @@ Rails.application.routes.draw do
   end
 
   resource :map, only: :show
-
 end
 

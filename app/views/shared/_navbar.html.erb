@@ -1,13 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-lewagon">
   <%= link_to "/", class: "navbar-brand d-flex just-content-between" do %>
-  <%#= image_tag "https://res.cloudinary.com/dri7xzd5a/image/upload/v1583272495/logo_yng7bv.png" %>
+     <%#= cl_image_tag "https://res.cloudinary.com/yaelmontufar/image/upload/v1584035528/logo/streemer_so6wrs.png" , height: 30, width: 40, crop: :fill %>
     <h4 class= "company">streemer</h4>
   <% end %>
 
 
   <% if  current_user %>
     <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <%#= cl_image_path performer.performer_profile.photo.key, height: 300, width: 400, crop: :fill %>
+
       <span class="avatar">
         <%= render "users/avatar", user: current_user, size: 35 %>
       </span>
@@ -15,7 +15,8 @@
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
       <% if current_user.performer? %>
         <%= link_to "My profile", performer_path(current_user), class: "dropdown-item" %>
-        <% elsif %>
+        <%= link_to "Get Streemer Code", new_performer_tip_path(current_user), class: "dropdown-item" %>
+      <% elsif %>
          <%= link_to "Become a performer", new_performer_profile_path, class: "dropdown-item" %>
       <% end %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -32,3 +33,4 @@
 
 
 </div>
+

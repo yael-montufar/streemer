@@ -11,7 +11,7 @@
         <% if event.photo.attached?  %>
           <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid" %>
         <%else %>
-          <%= image_tag "http://placehold.it/400x300?text=No Image", alt: "Default Event Image", class: "img-fluid" %>
+          <%= image_tag "https://res.cloudinary.com/yaelmontufar/image/upload/v1584032572/Dollarphotoclub_93585774-1024x643_z0wh09.jpg", alt: "Default Event Image", class: "img-fluid" %>
         <% end %>
 
         <%= link_to "More", stream_event_path(event), class: "btn btn-success btn-sm card-trip-button" %>

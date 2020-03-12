@@ -15,7 +15,7 @@
   </head>
   <body>
     <div class="app-wrapper">
-      <%= render 'shared/navbar' %>
+      <%= render 'shared/navbar' if current_page?(root_path) %>
       <%= render 'shared/flashes' %>
       <%= yield %>
     </div>
