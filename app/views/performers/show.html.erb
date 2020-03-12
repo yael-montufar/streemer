@@ -1,5 +1,5 @@
 <div class="performer-banner performer-gradient position-relative <%= @is_mine && 'performer-profile-gradient' %>">
-  <%= image_tag qr_code_url(stream_event_url(@performer.performer_profile.events.last)), alt: "alttext" %>
+  <%#= image_tag qr_code_url(stream_event_url(@performer.performer_profile.events.last)), alt: "alttext" %>
   <%= render 'performer-show-card', performer: @performer, is_mine: @is_mine %>
   <%= render 'performer-follow-button', is_mine: @is_mine  %>
   <%= render 'performer-show-button', is_mine: @is_mine  %>

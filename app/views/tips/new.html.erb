@@ -1,0 +1,19 @@
+<div class="container pt-5">
+  <div align="center">
+    <% if current_user == @performer %>
+      <h2>Streemer code</h2>
+      <p>
+        Help your audience to tip you in an easier way
+        <break>
+        Print and take it with you
+      </p>
+      <%= image_tag qr_code_url(new_performer_tip_url(@performer)), alt: "QR Code", class: "img-thumbnail p-3 bg-white" %>
+
+    <% else %>
+      <%= render "users/avatar", user: @performer, size: 128 %>
+      <h2 class="h4 pt-2"><%= @performer.performer_profile.stage_name %></h2>
+      <%= render "tips/buttons", performer_profile: @performer.performer_profile %>
+    <% end %>
+  </div>
+</div>
+
