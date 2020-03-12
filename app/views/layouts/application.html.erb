@@ -54,6 +54,18 @@
           }
         ]
       });
+
+      $('[data-slick]').on("swipe", (event) => {
+        const currentItem = event.currentTarget
+        const itemId = Number(currentItem.querySelector(".slick-center").dataset.id)
+
+        map.flyTo({
+          center: window.markers[itemId].getLngLat(),
+          zoom: 16,
+          essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+
+      })
     </script>
   </body>
 

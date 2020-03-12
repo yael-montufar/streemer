@@ -21,13 +21,13 @@ const buildMap = () => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+    // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
     const markerElement = buildMarker(marker)
 
     const markerInstance = new mapboxgl.Marker(markerElement)
       .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup)
+      // .setPopup(popup)
       .addTo(map);
 
     window.markers[marker.id] = markerInstance;
@@ -89,18 +89,18 @@ const logMarkers = (markers) => {
   // console.log(markers[0]) should use window.markrs to use marker.id
 
 
-  carouselItem.forEach(item =>
-    item.addEventListener("click", (event) => {
-      // console.log(event);
-      const itemId = Number(event.currentTarget.dataset.id);
-      console.log(itemId);
-      // console.log(markers[17].lat);
-      map.flyTo({
-        center: window.markers[itemId].getLngLat(),
-        zoom: 16,
-        essential: true // this animation is considered essential with respect to prefers-reduced-motion
-      });
-    }));
+  // carouselItem.forEach(item =>
+  //   item.addEventListener("click", (event) => {
+  //     // console.log(event);
+  //     const itemId = Number(event.currentTarget.dataset.id);
+  //     console.log(itemId);
+  //     // console.log(markers[17].lat);
+  //     map.flyTo({
+  //       center: window.markers[itemId].getLngLat(),
+  //       zoom: 16,
+  //       essential: true // this animation is considered essential with respect to prefers-reduced-motion
+  //     });
+  //   }));
 }
 
 

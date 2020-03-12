@@ -10,6 +10,7 @@ gem 'rails', '5.2.4.1'
 gem 'redis'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'geocoder'
+gem 'dotiw'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
