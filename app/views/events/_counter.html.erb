@@ -1,49 +1,5 @@
-<div id="dueDate-counter<%= "index" %>">
-   <table>
-      <tr>
-        <td id="days<%= index %>"></td>
-        <td id="hours<%= index %>"></td>
-        <td id="minutes<%= index %>"></td>
-        <td id="seconds<%= index %>"></td>
-      </tr>
-
-    </table>
-
-      <script type="text/javascript">
-        function countdown<%= index %>() {
-          var now = new Date();
-
-          var eventDate = new Date("<%= event.ends_at %>");
-          var currentTime = now.getTime();
-          var eventTime = eventDate.getTime();
-
-          var remTime = eventTime - currentTime;
-
-          var s = Math.floor(remTime / 1000);
-          var m = Math.floor(s / 60);
-          var h = Math.floor(m / 60);
-          var d = Math.floor(h / 24);
-
-          h %= 24;
-          m %= 60;
-          s %= 60;
-
-          h = (h < 10) ? "0" + h : h;
-          m = (m < 10) ? "0" + m : m;
-          s = (s < 10) ? "0" + s : s;
-
-          document.getElementById("days<%= index %>").textContent = d;
-          document.getElementById("days<%= index %>").innerText = d + " |";
-
-          document.getElementById("hours<%= index %>").textContent = h + ":";
-          document.getElementById("minutes<%= index %>").textContent = m + ":";
-          document.getElementById("seconds<%= index %>").textContent = s;
-
-            setTimeout(countdown<%= index %>, 1000);
-                    }
-
-                    countdown<%= index %>();
-
-                  </script>
-
-                </div>
+<% if event.now? %>
+  Ends in <%= distance_of_time_in_words_to_now(event.ends_at) %>
+<% else %>
+  Starts in <%= distance_of_time_in_words_to_now(event.starts_at) %>
+<% end %>

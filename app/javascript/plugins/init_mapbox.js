@@ -27,6 +27,7 @@ const addMarkersToMap = (map, markers) => {
 
     const markerInstance = new mapboxgl.Marker(markerElement)
       .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
       .addTo(map);
     window.markers[marker.id] = markerInstance;
 
@@ -77,7 +78,7 @@ const getUserLocation = (map) =>{
 
 const logMarkers = (markers) => {
 
-  const carouselItem = document.querySelectorAll(".carousel-item-map");
+  // const carouselItem = document.querySelectorAll(".carousel-item-map");
   // const carouselItem = document.getElementById("carousel-item-map");
 
   // markers.forEach((marker) => {

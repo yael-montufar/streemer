@@ -70,10 +70,14 @@
 
 // ==================== center carousel by marker id ===========================
         Object.keys(window.markers).forEach((markerId) => {
-          window.markers[markerId].setRotation(0)
+          const marker = window.markers[markerId]
+          // marker.setRotation(0)
+          marker.getPopup().remove()
         })
-        window.markers[itemId].setRotation(180)
 
+        const marker = window.markers[itemId]
+        marker.togglePopup()
+        // .setRotation(180)
       })
 
 
