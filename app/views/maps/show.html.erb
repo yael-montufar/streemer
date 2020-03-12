@@ -7,13 +7,31 @@
 <div class="map-carousel">
   <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
     <% @events.each do |event| %>
-      <div class="carousel-item-map" data-id="<%= event.id %>">
+
+
+      <div class="carousel-item-map card-trip" data-id="<%= event.id %>">
         <% if event.photo.attached?  %>
           <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid" %>
         <%else %>
           <%= image_tag "http://placehold.it/400x300?text=No Image", alt: "Default Event Image", class: "img-fluid" %>
         <% end %>
+
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= event.name %></h2>
+            <p><%= event.description %></p>
+          </div>
+            <% if event.performer_profile.photo.attached? %>
+              <%= cl_image_tag event.performer_profile.photo.key, height: 40, width: 40, crop: :fill, alt: event.performer_profile.stage_name, class: "card-trip-user avatar-bordered" %>
+            <% else %>
+              <%= image_tag "default-event.gif", alt: "Default user avatar", class: "card-trip-user avatar-bordered" %>
+            <% end %>
+        </div>
       </div>
+
+
     <% end %>
   </div>
 </div>
+
+
