@@ -122,7 +122,7 @@ live_event_1 = Event.create!(
   location:  "Lerdo 206, Guerrero, Mexico City, CDMX, Mexico",
   # starts_at: Time.current + 40.minutes,
   starts_at: Time.current - 5.minutes,
-  ends_at: Time.current + 30.minutes,
+  ends_at: Time.current + 20.minutes,
   twitch_id: "https://player.twitch.tv/?autoplay=false&video=v239617707",
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584134885/contrabass_bue3bj.jpg")
@@ -135,7 +135,7 @@ live_event_2 = Event.create!(
   name: "Soul Guitar",
   description: "A collection of romantic songs from all times",
   starts_at: Time.current - 15.minutes,
-  ends_at: Time.current + 45.minutes,
+  ends_at: Time.current + 30.minutes,
   location: "Av Insurgentes Sur 644, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico",
   twitch_id: "https://player.twitch.tv/?autoplay=false&video=v238218178",
 )
