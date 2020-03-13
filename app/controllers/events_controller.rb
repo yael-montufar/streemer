@@ -28,7 +28,7 @@ class EventsController < ApplicationController
 
   def stream
     if params[:tip] == "success"
-      flash[:notice] = "Tip Successful"
+      flash[:popup_notice] = "Tip sent!"
     end
 
     @event = Event.find(params[:id])
