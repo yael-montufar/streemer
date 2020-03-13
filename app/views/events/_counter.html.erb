@@ -1,5 +1,10 @@
 <% if event.now? %>
-  Ends in <%= distance_of_time_in_words_to_now(event.ends_at) %>
+Now live
+<br>
+Ends in <%= distance_of_time_in_words_to_now(event.ends_at) %>
+
 <% else %>
-  Starts in <%= distance_of_time_in_words_to_now(event.starts_at) %>
+Starts soon in
+<br>
+<%= distance_of_time_in_words_to_now(event.starts_at) %>
 <% end %>
