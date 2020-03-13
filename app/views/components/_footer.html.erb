@@ -1,41 +1,22 @@
 <div class="footer">
-  <% if current_page?(root_path) %>
-    <a href="#"><i class="fab fa-instagram text-white"></i></a>
-    <a href="#"><i class="fab fa-facebook text-white"></i></a>
-    <a href="#"><i class="fab fa-twitter text-white"></i></a>
-  <% else %>
+  <a href=<%= map_path %>><i class="fas fa-map-marked-alt text-white"></i></a>
+  <!-- <a href=<%#= map_path(now: true) %>><i class="far fa-play-circle text-white"></i></a> -->
+  <!-- <a href=<%#= map_path(soon: true) %>><i class="far fa-clock text-white"></i></a> -->
 
-    <a href=<%= map_path %>><i class="fas fa-map-marked-alt text-white"></i></a>
-    <!-- <a href=<%#= map_path(now: true) %>><i class="far fa-play-circle text-white"></i></a> -->
-    <!-- <a href=<%#= map_path(soon: true) %>><i class="far fa-clock text-white"></i></a> -->
-
-    <% if current_user %>
-      <h4 class= "company"><%= link_to "streemer", root_path, class: "text-white text-decoration-none" %></h4>
-      <div class="btn-group dropup">
-        <button type="button" class="safari-button-fix" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user text-white"></i>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <% if current_user.performer? %>
-            <%= link_to "My profile", performer_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Get Streemer Code", new_performer_tip_path(current_user), class: "dropdown-item" %>
-          <% elsif %>
-             <%= link_to "Become a performer", new_performer_profile_path, class: "dropdown-item" %>
-          <% end %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        </div>
-      </div>
-    <% end %>
-
-  <% end %>
-
-
-<!--
-  <% #else %>
-    <a href=<%= map_path %>><i class="fas fa-map-marked-alt text-white"></i></a>
-    <a href=<%= events_path %>><i class="fas fa-list-ul fa text-white"></i></a>
-     -->
+  <h4 class= "company"><%= link_to "streemer", root_path, class: "text-white text-decoration-none" %></h4>
+  <div class="btn-group dropup">
+    <button type="button" class="safari-button-fix" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-user text-white"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right">
+      <% if current_user.performer? %>
+        <%= link_to "My profile", performer_path(current_user), class: "dropdown-item" %>
+        <%= link_to "Get Streemer Code", new_performer_tip_path(current_user), class: "dropdown-item" %>
+      <% elsif %>
+         <%= link_to "Become a performer", new_performer_profile_path, class: "dropdown-item" %>
+      <% end %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    </div>
+  </div>
 </div>
-
-
 

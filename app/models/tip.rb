@@ -1,6 +1,6 @@
 class Tip < ApplicationRecord
   belongs_to :performer_profile
-  belongs_to :user
+  belongs_to :user, optional: true
 
   monetize :amount_cents # amount
   # For $50

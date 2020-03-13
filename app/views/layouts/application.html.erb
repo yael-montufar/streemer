@@ -2,6 +2,11 @@
 <html>
 
   <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable"  content="yes">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+    <%= render 'shared/ios_pwa_links' %>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>STREEMER</title>
@@ -19,7 +24,7 @@
       <%= render 'shared/flashes' %>
       <%= yield %>
     </div>
-    <%= render 'components/footer' %>
+    <%= render 'components/footer' if current_user.present? %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

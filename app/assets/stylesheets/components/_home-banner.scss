@@ -20,7 +20,7 @@
 .gradient {
   background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6),rgba(0,0,0,0.3),rgba(0,0,0,0.9));
   width: 100%;
-  height: calc(100vh - 87px);
+  height: calc(100vh - 62px);
   min-height: 600px;
   object-fit: cover;
 }
@@ -37,7 +37,7 @@ padding-top: 200px
   bottom: 0;
   min-width: 100%;
   width: 100%;
-  height: calc(100vh - 87px);
+  height: calc(100vh - 62px);
   min-height: 600px;
   position: absolute;
   z-index: -1;

@@ -5,7 +5,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
-import { initWaveChannel } from "../channels/wave_channel"
+import { initWaveChannel } from "../channels/wave_channel";
 
 initWaveChannel();
 
+import { initSwal } from "../plugins/sweet_alert";
+initSwal();
