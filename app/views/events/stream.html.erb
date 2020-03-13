@@ -2,7 +2,7 @@
   <h5 class="ml-2 pt-1 mt-3 mb-3">
     <div class="d-flex justify-content-around">
       <div><%= @event.name %></div>
-      <div><%= link_to "About", performer_path(@event.performer_profile.user), class: "btn btn-success rounded text-white px-4" %></div>
+      <div><%= link_to "About performer", performer_path(@event.performer_profile.user), class: "btn btn-success rounded text-white px-4" %></div>
     </div>
   </h5>
 
