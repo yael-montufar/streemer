@@ -65,10 +65,11 @@ file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v158398052
 
 performer_7 = PerformerProfile.create!(
   user: User.create!(email: "performer7@email.com", password: "123456"),
-  stage_name: "Copywrite",
-  bio: "A busker of multiple countries and 10 years experience, Jack sillfylly mixes guitar, vocals, beatboxing, looping, sampling and effects to create a powerful sound evoking an eclectic blend of folk, hip hop, rock, pop and base music.  Captivating performance with a unique atmosphere and rich, driving layers, all performed live. Expect a hell of a show."
+  stage_name: "Yael",
+  bio: "A busker of multiple countries and 10 years experience, Yael sillfylly mixes guitar, vocals, beatboxing, looping, sampling and effects to create a powerful sound evoking an eclectic blend of folk, hip hop, rock, pop and base music.  Captivating performance with a unique atmosphere and rich, driving layers, all performed live. Expect a hell of a show."
 )
-file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584030583/User%20profiles/pexels-photo-220453_z5pcrq.jpg")
+file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584136162/User%20profiles/asdfasdf_zo5h2q.png")
+
     performer_7.photo.attach(io: file, filename: 'chello.jpg', content_type: 'image/jpg')
     performer_7.save!
 
