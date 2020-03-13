@@ -3,5 +3,5 @@
 <% if user.performer? && user.performer_profile.photo.attached? %>
   <%= cl_image_tag user.performer_profile.photo.key, width: size, height: size, crop: :fill, alt: user.performer_profile.stage_name, class: "mr-3 rounded-circle" %>
 <% else %>
-  <%= image_tag "default-event.gif", width: size, height: size, alt: "Default user avatar", class: "mr-3 rounded-circle" %>
+  <%= image_tag "https://res.cloudinary.com/yaelmontufar/image/upload/v1584119970/User%20profiles/61352298_2609455392417142_8281219605553217536_n_1_mdq8qu.jpg", width: size, height: size, alt: "Default user avatar", class: "mr-3 rounded-circle" %>
 <% end %>

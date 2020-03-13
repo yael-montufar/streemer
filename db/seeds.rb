@@ -113,40 +113,12 @@ file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v158379229
      upcoming_event_2.save!
 
 
-upcoming_event_3 = Event.create!(
-  performer_profile: performer_6,
-  name: "Fire in Earth",
-  description: "The best fire performace that will blow your mind",
-  starts_at: Time.now + rand(1..3).days,
-  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
-  location: "Campeche 233, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX",
-  # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792302/6dfc3f05-9f4e-3e11-865c-404cf6296202_gv0buz.jpg",
-)
-file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792302/6dfc3f05-9f4e-3e11-865c-404cf6296202_gv0buz.jpg")
-     upcoming_event_3.photo.attach(io: file, filename: 'fire.jpg', content_type: 'image/jpg')
-     upcoming_event_3.save!
-
-
-upcoming_event_4 = Event.create!(
-  performer_profile: performer_8,
-  name: "Salsabor",
-  description: "Salsa for the salseros like you. Best street salsa concert.",
-  starts_at: Time.now + rand(1..3).days,
-  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
-  location: "Bosque de Chapultepec, Miguel Hidalgo, Mexico City, CDMX, Mexico",
-  # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792306/27e4ec2e-491e-357d-bf5f-f77abe096614_yswyjn.jpg",
-)
-file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792306/27e4ec2e-491e-357d-bf5f-f77abe096614_yswyjn.jpg")
-     upcoming_event_4.photo.attach(io: file, filename: 'drummers.jpg', content_type: 'image/jpg')
-     upcoming_event_4.save!
-
-
 # ============== live events ==========
 
 puts "Creating live events..."
 live_event_1 = Event.create!(
   performer_profile: performer_1,
-  name: "Hello Neighbour",
+  name: "Tress Pesos",
   description: "A jazz musical ",
   location:  "Lerdo 206, Guerrero, Mexico City, CDMX, Mexico",
   # starts_at: Time.now + 40.minutes,
@@ -154,43 +126,30 @@ live_event_1 = Event.create!(
   ends_at: Time.now + 40.minutes + 1.hour,
   twitch_id: "https://player.twitch.tv/?autoplay=false&video=v239617707",
 )
+file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584122276/jazz_ki7h2u.jpg")
+     live_event_1.photo.attach(io: file, filename: 'chello.jpg', content_type: 'image/jpg')
+     live_event_1.save!
+
 
 live_event_2 = Event.create!(
   performer_profile: performer_3,
-  name: "Indigoing",
-  description: "Enjoy with us an unique breakdance show ",
+  name: "Soul Guitar",
+  description: "A collection of romantic songs from all times",
   starts_at: Time.now - rand(2..60).minutes,
   ends_at: Time.now + 40.minutes + 2.hour,
   location: "Av Insurgentes Sur 644, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico",
   twitch_id: "https://player.twitch.tv/?autoplay=false&video=v238218178",
 )
-
-live_event_3 = Event.create!(
-  performer_profile: performer_5,
-  name: "MonkeyBusiness",
-  description: "Cover Band that will play your favority music",
-  starts_at: Time.now - rand(2..60).minutes,
-  ends_at: Time.now + 40.minutes + 2.hour,
-  location: "Av Insurgentes Sur 710, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico",
-  twitch_id: "https://player.twitch.tv/?autoplay=false&video=v546129488",
-)
-
-live_event_4 = Event.create!(
-  performer_profile: performer_7,
-  name: "Unhinged",
-  description: "Rock from the 90's ",
-  starts_at: Time.now - rand(2..60).minutes,
-  ends_at: Time.now + 40.minutes + 2.hour,
-  location: "Rubens 6, Benito Juárez, San Juan, Mexico City, CDMX, Mexico",
-  twitch_id: "https://player.twitch.tv/?autoplay=false&video=v238183579",
-)
-
+file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584122328/guitar_lsnjzo.jpg")
+     live_event_2.photo.attach(io: file, filename: 'chello.jpg', content_type: 'image/jpg')
+     live_event_2.save!
 
 puts "Creating patrons..."
 patron_1 = User.create!(
   email: "patron1@email.com",
   password: "123456"
 )
+
 patron_2 = User.create!(
   email: "patron2@email.com",
   password: "123456"

@@ -19,7 +19,7 @@
       <%= render 'shared/flashes' %>
       <%= yield %>
     </div>
-    <%= render 'components/footer' %>
+    <%= render 'components/footer' if current_user.present? %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
