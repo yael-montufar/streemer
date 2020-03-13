@@ -65,10 +65,11 @@ file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v158398052
 
 performer_7 = PerformerProfile.create!(
   user: User.create!(email: "performer7@email.com", password: "123456"),
-  stage_name: "Copywrite",
-  bio: "A busker of multiple countries and 10 years experience, Jack sillfylly mixes guitar, vocals, beatboxing, looping, sampling and effects to create a powerful sound evoking an eclectic blend of folk, hip hop, rock, pop and base music.  Captivating performance with a unique atmosphere and rich, driving layers, all performed live. Expect a hell of a show."
+  stage_name: "Yael",
+  bio: "A busker of multiple countries and 10 years experience, Yael sillfylly mixes guitar, vocals, beatboxing, looping, sampling and effects to create a powerful sound evoking an eclectic blend of folk, hip hop, rock, pop and base music.  Captivating performance with a unique atmosphere and rich, driving layers, all performed live. Expect a hell of a show."
 )
-file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584030583/User%20profiles/pexels-photo-220453_z5pcrq.jpg")
+file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584136162/User%20profiles/asdfasdf_zo5h2q.png")
+
     performer_7.photo.attach(io: file, filename: 'chello.jpg', content_type: 'image/jpg')
     performer_7.save!
 
@@ -90,8 +91,8 @@ upcoming_event_1 = Event.create!(
   performer_profile: performer_2,
   name: "Sound Isidro",
   description: "The best conteporary music ",
-  starts_at: Time.current + 6.hours,
-  ends_at: Time.current + 12.hours,
+  starts_at: Time.current + 2.hours,
+  ends_at: Time.current + 3.hours,
   location: "Campeche 200, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX",
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792294/07ace029-7be6-39e7-b342-780f5cce9523_kxkn1a.jpg",
 )
@@ -103,8 +104,8 @@ upcoming_event_2 = Event.create!(
   performer_profile: performer_3,
   name: "Flamenco dance",
   description: "From Spain to Mexican streets, Flamenco dance",
-  starts_at: Time.current + rand(1..3).days,
-  ends_at: Time.current + rand(2..30).minutes + rand(2..6).hours,
+  starts_at: Time.current + 2.hours + 30.minutes,
+  ends_at: Time.current + 3.hours + 30.minutes,
   location: "Fernando Montes de Oca 28 - Ciudad de México, CDMX",
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792298/VEADo0XoZj-compress_flsqex.jpg",
 )
@@ -118,14 +119,14 @@ puts "Creating live events..."
 live_event_1 = Event.create!(
   performer_profile: performer_1,
   name: "Tress Pesos",
-  description: "A jazz musical ",
+  description: "Contrabass and guitar",
   location:  "Lerdo 206, Guerrero, Mexico City, CDMX, Mexico",
   # starts_at: Time.current + 40.minutes,
-  starts_at: Time.current - rand(20..60).minutes,
-  ends_at: Time.current + 40.minutes + 1.hour,
+  starts_at: Time.current - 5.minutes,
+  ends_at: Time.current + 20.minutes,
   twitch_id: "https://player.twitch.tv/?autoplay=false&video=v239617707",
 )
-file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584122276/jazz_ki7h2u.jpg")
+file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584134885/contrabass_bue3bj.jpg")
      live_event_1.photo.attach(io: file, filename: 'chello.jpg', content_type: 'image/jpg')
      live_event_1.save!
 
@@ -134,8 +135,8 @@ live_event_2 = Event.create!(
   performer_profile: performer_4,
   name: "Soul Guitar",
   description: "A collection of romantic songs from all times",
-  starts_at: Time.now - rand(2..60).minutes,
-  ends_at: Time.now + 40.minutes + 2.hour,
+  starts_at: Time.current - 15.minutes,
+  ends_at: Time.current + 30.minutes,
   location: "Av Insurgentes Sur 644, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico",
   twitch_id: "https://player.twitch.tv/?autoplay=false&video=v238218178",
 )
