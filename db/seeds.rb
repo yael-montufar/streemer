@@ -100,7 +100,7 @@ file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v158379229
      upcoming_event_1.save!
 
 upcoming_event_2 = Event.create!(
-  performer_profile: performer_4,
+  performer_profile: performer_3,
   name: "Flamenco dance",
   description: "From Spain to Mexican streets, Flamenco dance",
   starts_at: Time.current + rand(1..3).days,
@@ -131,7 +131,7 @@ file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v158412227
 
 
 live_event_2 = Event.create!(
-  performer_profile: performer_3,
+  performer_profile: performer_4,
   name: "Soul Guitar",
   description: "A collection of romantic songs from all times",
   starts_at: Time.now - rand(2..60).minutes,
