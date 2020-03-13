@@ -9,7 +9,7 @@ class EventsController < ApplicationController
       end
       @icons = []
       @live_events.each do |event|
-        @now = Time.now
+        @now = Time.current
         @range = event.starts_at..event.ends_at
         if @range === @now
           @icons << "fa-play-circle"
