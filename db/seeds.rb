@@ -90,8 +90,8 @@ upcoming_event_1 = Event.create!(
   performer_profile: performer_2,
   name: "Sound Isidro",
   description: "The best conteporary music ",
-  starts_at: Time.now + 6.hours,
-  ends_at: Time.now + 12.hours,
+  starts_at: Time.current + 6.hours,
+  ends_at: Time.current + 12.hours,
   location: "Campeche 200, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX",
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792294/07ace029-7be6-39e7-b342-780f5cce9523_kxkn1a.jpg",
 )
@@ -103,15 +103,14 @@ upcoming_event_2 = Event.create!(
   performer_profile: performer_4,
   name: "Flamenco dance",
   description: "From Spain to Mexican streets, Flamenco dance",
-  starts_at: Time.now + rand(1..3).days,
-  ends_at: Time.now + rand(2..30).minutes + rand(2..6).hours,
+  starts_at: Time.current + rand(1..3).days,
+  ends_at: Time.current + rand(2..30).minutes + rand(2..6).hours,
   location: "Fernando Montes de Oca 28 - Ciudad de México, CDMX",
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792298/VEADo0XoZj-compress_flsqex.jpg",
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1583792298/VEADo0XoZj-compress_flsqex.jpg")
      upcoming_event_2.photo.attach(io: file, filename: 'chello.jpg', content_type: 'image/jpg')
      upcoming_event_2.save!
-
 
 # ============== live events ==========
 
@@ -121,9 +120,9 @@ live_event_1 = Event.create!(
   name: "Tress Pesos",
   description: "A jazz musical ",
   location:  "Lerdo 206, Guerrero, Mexico City, CDMX, Mexico",
-  # starts_at: Time.now + 40.minutes,
-  starts_at: Time.now - rand(2..60).minutes,
-  ends_at: Time.now + 40.minutes + 1.hour,
+  # starts_at: Time.current + 40.minutes,
+  starts_at: Time.current - rand(20..60).minutes,
+  ends_at: Time.current + 40.minutes + 1.hour,
   twitch_id: "https://player.twitch.tv/?autoplay=false&video=v239617707",
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584122276/jazz_ki7h2u.jpg")
