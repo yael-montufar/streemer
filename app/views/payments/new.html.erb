@@ -4,7 +4,8 @@
       <%= render "users/avatar", user: @performer.user, size: 120 %>
     </div>
     <h3>Tip confirmation</h3>
-    <p><strong><%= @performer.stage_name %></strong> for <strong><%= humanized_money_with_symbol @tip.amount %></strong></p>
+    <p>Send <strong><%= @performer.stage_name %>
+      <%= humanized_money_with_symbol @tip.amount %></strong></p>
     <button id="pay" class="btn btn-success">Confirm</button>
   </div>
 </div>
