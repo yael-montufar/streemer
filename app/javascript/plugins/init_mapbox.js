@@ -15,7 +15,9 @@ const buildMap = () => {
     container: 'map',
     style: 'mapbox://styles/vanessapalomino/ck7ghrtg7060q1ip0wax96cr6/draft',
     center: [-96, 37.8], // starting position
-    zoom: 12 // starting zoom
+    zoom: 12, // starting zoom
+    pitch: 60,
+    bearing: -60
   });
 };
 
