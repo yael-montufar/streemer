@@ -91,8 +91,8 @@ upcoming_event_1 = Event.create!(
   performer_profile: performer_2,
   name: "Sound Isidro",
   description: "The best conteporary music ",
-  starts_at: Time.current + 2.hours,
-  ends_at: Time.current + 3.hours,
+  starts_at: Time.current + 50.days,
+  ends_at: Time.current + 51.days,
   location: "Campeche 200, Hipódromo Condesa, Cuauhtémoc, 06170 Ciudad de México, CDMX",
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792294/07ace029-7be6-39e7-b342-780f5cce9523_kxkn1a.jpg",
 )
@@ -104,8 +104,8 @@ upcoming_event_2 = Event.create!(
   performer_profile: performer_3,
   name: "Flamenco dance",
   description: "From Spain to Mexican streets, Flamenco dance",
-  starts_at: Time.current + 2.hours + 30.minutes,
-  ends_at: Time.current + 3.hours + 30.minutes,
+  starts_at: Time.current + 45.days + 10.hours,
+  ends_at: Time.current + 46.hours + 30.minutes,
   location: "Fernando Montes de Oca 28 - Ciudad de México, CDMX",
   # photo: "https://res.cloudinary.com/yaelmontufar/image/upload/v1583792298/VEADo0XoZj-compress_flsqex.jpg",
 )
@@ -123,7 +123,7 @@ live_event_1 = Event.create!(
   location:  "Lerdo 206, Guerrero, Mexico City, CDMX, Mexico",
   # starts_at: Time.current + 40.minutes,
   starts_at: Time.current - 5.minutes,
-  ends_at: Time.current + 20.minutes,
+  ends_at: Time.current + 40.days,
   twitch_id: "https://player.twitch.tv/?autoplay=false&video=v239617707",
 )
 file = URI.open("https://res.cloudinary.com/yaelmontufar/image/upload/v1584134885/contrabass_bue3bj.jpg")
@@ -136,7 +136,7 @@ live_event_2 = Event.create!(
   name: "Soul Guitar",
   description: "A collection of romantic songs from all times",
   starts_at: Time.current - 15.minutes,
-  ends_at: Time.current + 30.minutes,
+  ends_at: Time.current + 41.days,
   location: "Av Insurgentes Sur 644, Del Valle, Benito Juarez, Mexico City, CDMX, Mexico",
   twitch_id: "https://player.twitch.tv/?autoplay=false&video=v238218178",
 )
