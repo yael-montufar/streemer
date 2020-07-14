@@ -13,7 +13,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/vanessapalomino/ck7ghrtg7060q1ip0wax96cr6/draft',
+    style: 'mapbox://styles/yael-montufar/ckclavue40hid1io1i77w7hpc',
     center: [-96, 37.8], // starting position
     zoom: 12, // starting zoom
     pitch: 60,
