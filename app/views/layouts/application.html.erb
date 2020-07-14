@@ -19,79 +19,8 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   </head>
   <body>
-    <div class="app-wrapper">
-      <%= render 'shared/navbar' if current_page?(root_path) %>
-      <%= render 'shared/flashes' %>
+      <%= render "layouts/desktop" %>
       <%= yield %>
-    </div>
-    <%= render 'components/footer' if current_user.present? %>
-
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
-
-    <script>
-      $('[data-slick]').slick({
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 5,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 3
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '80px',
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-
-      $('[data-slick]').on("swipe", (event) => {
-        const currentItem = event.currentTarget
-        const itemId = Number(currentItem.querySelector(".slick-center").dataset.id)
-
-        // console.log(itemId)
-        // window.markers[itemId].setRotation(180) js to rotate marker
-        map.flyTo({
-          center: window.markers[itemId].getLngLat(),
-          zoom: 16,
-          speed: 2.5,
-          essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
-
-
-// ==================== center carousel by marker id ===========================
-
-        map.on("zoomend", () => {
-          Object.keys(window.markers).forEach((markerId) => {
-            const marker = window.markers[markerId]
-            // marker.setRotation(0)
-            marker.getPopup().remove()
-          })
-          const marker = window.markers[itemId]
-          marker.togglePopup()
-        })
-        // .setRotation(180)
-      })
-
-
-      // console.log(currentSlide);
-
-    </script>
   </body>
 
 </html>
